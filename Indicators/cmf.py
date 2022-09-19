@@ -30,5 +30,3 @@ class CMF:
         result2 = money_flow_volume(result1, data.loc[i, "Volume"])
         CMF = result2.sum() / data["Volume"].sum()
         print(CMF)
-
-dog= CMF(1,2,3,4)
