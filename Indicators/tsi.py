@@ -4,7 +4,7 @@ class TSI:
     """
     Class to calculate True Strength Index 
     """
-    def __init__(self, close:list, long:list=25, short:list=13):
+    def __init__(self, close:list, long:int=25, short:int=13):
         self.close = close
         self.long = long
         self.short = short
