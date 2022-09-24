@@ -2,7 +2,7 @@ import pandas as pd
 
 class TSI:
     """
-    Class to calculate True Strength Index 
+    Class to calculate True Strength Index.
     """
     def __init__(self, close:list, long:int=25, short:int=13):
         self.close = close
