@@ -23,8 +23,7 @@ class movingAverage:
     def yazdir(self) -> list:
         return self.nanSeries()
 
-
-movingAverage('dataset','period').yazdir
+#çalıştırmak için movingAverage('dataset','period').yazdir()
 
     
       
