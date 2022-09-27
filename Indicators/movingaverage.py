@@ -3,27 +3,27 @@ import numpy as np
 
 
 class movingAverage:
-    def __init__(self,dataset,period=3):
+    def __init__(self,dataset:list,period:int=3):
         self.dataset = dataset
         self.period = period
 
-    def calcAverage(self):         # n değeri yerine girilen sayılık günlük ortalama bulduruyor
-        ret = np.cumsum(self.dataset,dtype=float)
+    def calcAverage(self):                             # Calculating the mean
+        ret = np.cumsum(self.dataset,dtype=float)      # for a given period
         ret[self.period:] = ret[self.period:] - ret[:-self.period]
         return ret[self.period-1:] / self.period
 
 
     def nanSeries(self):
         nanSeri=[]
-        for _ in range(self.period):
-           nanSeri.append(nan) #istediğimiz vakitten itibaren ortalamanın plot için gerekli boşlukları sağlayacak
+        for _ in range(self.period):                      # Inserting the NaNs to the list
+           nanSeri.append(nan)                            # by using this function.
         nanSeri[(self.period-1):] = self.calcAverage()
         return nanSeri
 
-    def yazdir(self) -> list:
+    def print(self) -> list:
         return self.nanSeries()
 
-#çalıştırmak için movingAverage('dataset','period').yazdir()
+# movingAverage('dataset','period').print() for running.
 
     
       
