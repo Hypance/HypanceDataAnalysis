@@ -1,20 +1,26 @@
 
 import pandas as pd
-data=pd.read_excel('Stochastic-Oscillator.xlsx')
-print(data)
 
-def add_stochastic_oscillator(df, periods=5):
-    copy = df.copy()
-    
-    high_roll = copy["High"].rolling(periods).max()
-    low_roll = copy["Low"].rolling(periods).min()
-    
+class stochastic_oscillator:
+    def __init__(self,list,periods:int=5):
+        self.list=list
+        self.periods=periods
+
+    def add_stochastic_oscillator(self):
+        df = pd.DataFrame([self.list])
+
+        high_roll = copy["High"].rolling(self.periods).max()
+        low_roll = copy["Low"].rolling(self.periods).min()
+
     # Fast stochastic indicator
-    num = copy["Close"] - low_roll
-    denom = high_roll - low_roll
-    copy["%K"] = (num / denom) * 100
-    
+        num = copy["Close"] - low_roll
+        denom = high_roll - low_roll
+        copy["%K"] = (num / denom) * 100
+
     # Slow stochastic indicator
-    copy["%D"] = copy["%K"].rolling(3).mean()
-    
-    return copy
+        return copy["%D"]= copy["%K"].rolling(3).mean()
+
+    def print(self):
+        return self.add_stochastic_oscillator()
+
+stochastic_oscillator(list).print()
