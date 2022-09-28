@@ -1,7 +1,7 @@
 import pandas as pd
 class Rsi_counter():
 
-    def __int__(self, data_close, total_gain, total_loss):
+    def __init__(self, data_close, total_gain, total_loss):
         self.data_close = data_close
         self.total_loss = total_loss
         self.total_gain = total_gain
