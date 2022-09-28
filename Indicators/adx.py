@@ -1,4 +1,5 @@
 import numpy as np
+import math
 
 class ADX:
     def __init__(self, highs:list, lows:list, closes:list, periods:int=14):
@@ -74,4 +75,5 @@ class ADX:
         downdi[zeros] = .0000001
         adx = 100 * np.abs(updi - downdi) / (updi + downdi)
         adx = self.__ema(np.concatenate([[np.nan], adx]), periods)
+        adx = [None if math.isnan(x) else round(x, ndigits=2) for x in adx.tolist()]
         return adx
