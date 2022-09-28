@@ -1,6 +1,4 @@
 import pandas as pd
-rsi_db = pd.read_excel("/Users/esra/Library/Containers/com.microsoft.Excel/Data/Downloads/rsidosyasi.xlsx")
-data_close = rsi_db["close"]
 class Rsi_counter():
 
     def __int__(self, data_close, total_gain, total_loss):
@@ -26,7 +24,7 @@ class Rsi_counter():
                 total_loss = total_loss + loss
         return total_loss
 
-    def rsi_function(self):
+    def rsi(self):
         total_gain = self.gain_calculator()
         total_loss =self.loss_calculator()
         rs = total_gain/total_loss
@@ -34,5 +32,4 @@ class Rsi_counter():
         return rsi
 
 
-Result = Rsi_counter()
-print(Result.rsi_function())
+
