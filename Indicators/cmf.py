@@ -19,8 +19,16 @@ class CMF:
         return mfv
     
     # 3. 20-period CMF = 20-period Sum of Money Flow Volume / 20 period Sum of Volume 
+<<<<<<< HEAD
     def cmf(money_flow_multiplier,money_flow_volume,data):
         result1 = money_flow_multiplier(data.loc[:,"Close"],data.loc[:,"Low"],data.loc[:,"High"])
         result2 = money_flow_volume(result1, data.loc[:, "Volume"])
         cmf = result2.rolling(window=20).sum() / data["Volume"].rolling(window=20).sum()
         return cmf
+=======
+    for i in range(20):
+        result1 = money_flow_multiplier(data.loc[i,"Close"],data.loc[i,"Low"],data.loc[i,"High"])
+        result2 = money_flow_volume(result1, data.loc[i, "Volume"])
+        CMF = result2.sum() / data["Volume"].sum()
+        print(CMF)
+>>>>>>> 3278b0f31fd4884022cf1642d97495e643c3bbd2
