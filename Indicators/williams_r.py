@@ -22,6 +22,6 @@ class WilliamsR:
         #-10 and -90 reference values ​​are more reliable than -20 and -80
         
         # The formula of Williams%R
-        R = (self.__founder_higest_price(self) - self.current_close) / (self.__founder_higest_price(self) - self.__founder_lowest_price(self) ) *-100
+        R = (self.__founder_higest_price() - self.current_close) / (self.__founder_higest_price() - self.__founder_lowest_price() ) *-100
         
         return R
