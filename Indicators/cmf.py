@@ -1,18 +1,12 @@
 import pandas as pd
 
 class CMF:
-    data_name = 'cs-cmf.xls'
-    data = pd.read_excel(data_name)
-    # Column adlarını düzeltme
-    data.columns.values[4] = "MF_Multiplier"
-    data.columns.values[6] = "MF_Volume"
-    data.columns.values[7] = "20_period_CMF"
-
-    def __init__(self,close,low,high,volume):
+    def __init__(self,close,low,high,volume,data):
         self.close = close
         self.low = low
         self.high = high
         self.volume = volume
+        self.data = data
         
     #1. Money Flow Multiplier = [(Close  -  Low) - (High - Close)] /(High - Low) 
     def money_flow_multiplier(close,low,high):
@@ -25,10 +19,8 @@ class CMF:
         return mfv
     
     # 3. 20-period CMF = 20-period Sum of Money Flow Volume / 20 period Sum of Volume 
-    for i in range(20):
-        result1 = money_flow_multiplier(data.loc[i,"Close"],data.loc[i,"Low"],data.loc[i,"High"])
-        result2 = money_flow_volume(result1, data.loc[i, "Volume"])
-        CMF = result2.sum() / data["Volume"].sum()
-        print(CMF)
-
-dog= CMF(1,2,3,4)
+    def cmf(money_flow_multiplier,money_flow_volume,data):
+        result1 = money_flow_multiplier(data.loc[:,"Close"],data.loc[:,"Low"],data.loc[:,"High"])
+        result2 = money_flow_volume(result1, data.loc[:, "Volume"])
+        cmf = result2.rolling(window=20).sum() / data["Volume"].rolling(window=20).sum()
+        return cmf
