@@ -1,7 +1,6 @@
-import numpy as np 
-
+import numpy as np
 class DPO:
-    def __init__(self,dataset:list,period:int=4) -> None: #gereken inputlar: dataset(array),period(int)
+    def __init__(self,dataset:list,period:int=4) -> None: #required input: dataset(array),period(int)
         self.dataset = dataset
         self.period = period
 
@@ -16,8 +15,9 @@ class DPO:
         tempArr = []
         for i in range(n-2,((n-2)+2*len(self.moving_average())),2):
             tempArr.append(self.dataset[(i//2)+1])
-        return np.array(tempArr)
+        periodCloses = np.array(tempArr)
+        return periodCloses
 
-    def print(self): #liste döndürecek yazdirma fonksiyonu, bu çağırılacak.
+    def dpo(self): #Starting function, it returns a list.
         dpoFinalize = np.subtract(self.closes(),self.moving_average())
-        return dpoFinalize
+        return list(dpoFinalize)
