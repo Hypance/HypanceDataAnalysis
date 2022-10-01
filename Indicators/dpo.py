@@ -19,6 +19,7 @@ class DPO:
         periodCloses = np.array(tempArr)
         return periodCloses
 
-    def dpo(self): #Starting function, it returns a list.
+    #Starting function, it returns a list.
+    def dpo(self): 
         dpoFinalize = np.subtract(self.closes(),self.moving_average())
         return list(dpoFinalize)
