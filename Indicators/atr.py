@@ -21,17 +21,7 @@
 #         ATR.append(np.mean(TR[0:14]))
 #         for i in range(16):
 #             ATR.append((ATR[i]*13+TR[i+14])/14)
-#             
-#         d = {
-#             "Close": data_close,
-#             "High": data_high,
-#             "Low": data_low,
-#             "TR": pd.Series(TR, index=[i for i in range(30)]),
-#             "ATR": pd.Series(ATR, index=[i for i in range(13,30)]),
-#             }
-#         df=pd.DataFrame(data=d, index=[i for i in range(30)])
 #      
-#         return df[13:].reset_index()
+#         return ATR
 #
 # data_all=np.array([data_close,data_high,data_low])
-# print(ATR(data_all).AverageTrueRange())
