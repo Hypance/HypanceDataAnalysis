@@ -6,7 +6,7 @@ class MACD:
         self.data_close = data_close
         #we only need to the closure data
 
-    def MovingAverageConvergenceDivergence(self,data_close):
+    def MovingAverageConvergenceDivergence(self):
    
         #Ema_12 is essential for the MACD, this "12" can be changable, but sorurces take "12".
         #For Ema_12 first we need to mean of first 12 days.
@@ -25,7 +25,8 @@ class MACD:
             Ema_26.append(self.data_close[i+26]*(0.07407407407407407)+(Ema_26[i]*(0.9259259259259259)))
    
    
-        #MACD values calculated with (Ema_12 - Ema_26). Datas must be taken from the same day. Because of that i add "14" for Ema_12 values.
+        #MACD values calculated with (Ema_12 - Ema_26). 
+        #Datas must be taken from the same day. Because of that i add "14" for Ema_12 values.
         calc_MACD=[]
         for i in range(41):
             calc_MACD.append(Ema_12[14+i]-Ema_26[i])
@@ -42,7 +43,8 @@ class MACD:
         for i in range(33):
             Histogram.append(calc_MACD[8+i]-Signal[i])
    
-        #If histogram value turns negative to positive that mean we can buy the stock, else we can sell the stock. In this code these are printed.
+        #If histogram value turns negative to positive that mean we can buy the stock, else we can sell the stock. 
+        #In this code these are printed.
         for i in range(32):
             if Histogram[i+1]>0 and Histogram[i]<0:
                 print("Date of "+f"{i+1}","Buy")
@@ -59,8 +61,8 @@ class MACD:
             }
         df=pd.DataFrame(data=d, index=[i for i in range(66)])
        
-        return df
+        return df[33:].reset_index()
 
-#data_close is the closure data. Then we put this data(list type) and print the result. This result is the matrix of the all calculations. 
-Result=MACD(data_close)
-print(Result.MovingAverageConvergenceDivergence(data_close))
+#data_close is the closure data. Then we put this data(list type) and print the result. 
+#This result is the matrix of the all calculations starting from day 33. 
+print(MACD(data_close).MovingAverageConvergenceDivergence())
