@@ -23,8 +23,3 @@ class ATR:
             ATR.append((ATR[i]*13+TR[i+14])/14)
 
         return ATR
-
-
-
-
-
