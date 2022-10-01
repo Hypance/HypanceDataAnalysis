@@ -1,6 +1,7 @@
 import numpy as np
 class DPO:
-    def __init__(self,dataset:list,period:int=4) -> None: #required input: dataset(array),period(int)
+    #required input: dataset(array),period(int)
+    def __init__(self, dataset:list, period:int=4) -> None: 
         self.dataset = dataset
         self.period = period
 
