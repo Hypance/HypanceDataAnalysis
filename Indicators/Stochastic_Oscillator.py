@@ -1,7 +1,7 @@
 
 import pandas as pd
 
-class stochastic_oscillator:
+class StochasticOscillator:
     def __init__(self,list,periods:int=5):
         self.list=list
         self.periods=periods
@@ -18,7 +18,11 @@ class stochastic_oscillator:
         copy["%K"] = (num / denom) * 100
 
     # Slow stochastic indicator
+    copy["%D"]= copy["%K"].rolling(3).mean()
+    
+    return copy
         return copy["%D"]= copy["%K"].rolling(3).mean()
+
 
     def print(self):
         return self.add_stochastic_oscillator()
