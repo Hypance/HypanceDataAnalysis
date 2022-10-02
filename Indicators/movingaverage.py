@@ -3,6 +3,13 @@ import numpy as np
 
 
 class MA:
+    '''
+    This class calculates MA for default 3-days period.
+    Attributes
+    --------------- 
+    close : list
+    period : int
+    '''
     def __init__(self,dataset:list,period:int=3):
         self.dataset = dataset
         self.period = period
