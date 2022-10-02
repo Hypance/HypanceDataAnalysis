@@ -2,30 +2,31 @@ from cmath import nan
 import numpy as np
 
 
-class movingAverage:
+class MA:
     def __init__(self,dataset:list,period:int=3):
         self.dataset = dataset
         self.period = period
+    
+    
+    # Calculating the mean
+    # for a given period (Default: 3 days)
 
-    def calcAverage(self):                             # Calculating the mean
-        ret = np.cumsum(self.dataset,dtype=float)      # for a given period
+    def calcAverage(self):                             
+        ret = np.cumsum(self.dataset,dtype=float)      
         ret[self.period:] = ret[self.period:] - ret[:-self.period]
         return ret[self.period-1:] / self.period
 
 
+     # Inserting the NaNs to the list
+     # by using this function.    
+    
     def nanSeries(self):
         nanSeri=[]
-        for _ in range(self.period):                      # Inserting the NaNs to the list
-           nanSeri.append(nan)                            # by using this function.
+        for _ in range(self.period):                      
+           nanSeri.append(nan)                           
         nanSeri[(self.period-1):] = self.calcAverage()
         return nanSeri
 
-    def print(self) -> list:
-        return self.nanSeries()
-
-# movingAverage('dataset','period').print() for running.
-
-    
-      
-
+    def ma(self) -> list:
+        return self.nanSeries()  
 
