@@ -1,7 +1,37 @@
 import pandas as pd
 
 class MFI:
+    """
+    This class calculate the money flow index for specific period.
+    ...
+    Attributes
+    ----------
+    close : list
+    low : list
+    high : list
+    volume: list
+
+    Methods
+    -------
+    typical_price(high,low,close):
+        Returns the typical price.
+
+    raw_money_flow(volume,typical_price):
+        Returns the raw money flow.
+        
+    positive_money_flow(period:int,data):
+        Returns the positive money flow. 
     
+    negative_money_flow(period:int,data):
+        Returns the negative money flow.
+    
+    money_ratio(positive_money_flow, negative_money_flow,period):
+        Returns the money ratio.
+    
+    money_flow_index(money_ratio):
+        Return the money flow index (mfi)
+    """
+
     def __init__(self,close:list,low:list,high:list,volume:list,data):
             self.close = close
             self.low = low
