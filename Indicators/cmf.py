@@ -25,18 +25,18 @@ class CMF:
 
     """
     
-    def __init__(self,close:list,low:list,high:list,volume:list,data):
+    def __init__(self,close:pd.Series,low:pd.Series,high:pd.Series,volume:pd.Series,data):
         self.close = close
         self.low = low
         self.high = high
         self.volume = volume
         self.data = data
         
-    def money_flow_multiplier(close,low,high):
+    def money_flow_multiplier(close,low,high) -> pd.Series:
         mfm = ((close - low) - (high - close)) / (high - low)
         return mfm
 
-    def money_flow_volume(mfm, volume):
+    def money_flow_volume(mfm, volume) -> pd.Series:
         mfv = mfm * volume
         return mfv
     
