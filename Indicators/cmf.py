@@ -7,10 +7,10 @@ class CMF:
     ...
     Attributes
     ----------
-    close : list
-    low : list
-    high : list
-    volume: list
+    close : pd.Series
+    low : pd.Series
+    high : pd.Series
+    volume: pd.Series
 
     Methods
     -------
