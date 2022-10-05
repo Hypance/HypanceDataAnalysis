@@ -19,4 +19,4 @@ class TestAdx(unittest.TestCase):
 
         self.assertEqual(result[-1], a.adx()[-1])
 
-        self.assertTrue(type(a.adx())=="list")
+        self.assertIsInstance(a.adx(), list)
