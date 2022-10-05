@@ -7,10 +7,10 @@ class CMF:
     ...
     Attributes
     ----------
-    close : list
-    low : list
-    high : list
-    volume: list
+    close : pd.Series
+    low : pd.Series
+    high : pd.Series
+    volume: pd.Series
 
     Methods
     -------
@@ -25,7 +25,7 @@ class CMF:
 
     """
     
-    def __init__(self,close:list,low:list,high:list,volume:list,data):
+    def __init__(self,close:pd.Series,low:pd.Series,high:pd.Series,volume:pd.Series,data):
         self.close = close
         self.low = low
         self.high = high
