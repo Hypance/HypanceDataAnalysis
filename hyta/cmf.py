@@ -7,10 +7,10 @@ class CMF:
     ...
     Attributes
     ----------
-    close : pd.Series
-    low : pd.Series
-    high : pd.Series
-    volume: pd.Series
+    close : pandas.Series
+    low : pandas.Series
+    high : pandas.Series
+    volume: pandas.Series
 
     Methods
     -------
@@ -25,24 +25,35 @@ class CMF:
 
     """
     
-    def __init__(self,close:pd.Series,low:pd.Series,high:pd.Series,volume:pd.Series,data):
+    def __init__(self,close:pd.Series,low:pd.Series,high:pd.Series,volume:pd.Series,period=20):
         self.close = close
         self.low = low
         self.high = high
         self.volume = volume
-        self.data = data
+        self.period = period
         
-    def money_flow_multiplier(close,low,high):
+    def money_flow_multiplier(self,close,low,high):
         mfm = ((close - low) - (high - close)) / (high - low)
+        try:
+            low/high
+        except ZeroDivisionError as e:
+            return "There is a data problem."
+            
         return mfm
 
-    def money_flow_volume(mfm, volume):
+    def money_flow_volume(self,mfm, volume):
         mfv = mfm * volume
         return mfv
     
-    def cmf(money_flow_multiplier,money_flow_volume,data):
-        mfm = money_flow_multiplier(data.loc[:,"Close"],data.loc[:,"Low"],data.loc[:,"High"])
-        mfv = money_flow_volume(mfm, data.loc[:, "Volume"])
-        cmf = mfv.rolling(window=20).sum() / data["Volume"].rolling(window=20).sum()
-        return cmf
+    def cmf(self):
+        #breakpoint()
+        close = self.close
+        low = self.low
+        high = self.high
+        volume = self.volume
+        period = self.period
 
+        mfm = self.money_flow_multiplier(close,low,high)
+        mfv = self.money_flow_volume(mfm,volume)
+        cmf = mfv.rolling(window=period).sum() / volume.rolling(window=period).sum()
+        return cmf
