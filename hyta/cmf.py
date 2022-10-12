@@ -32,21 +32,20 @@ class CMF:
         self.volume = volume
         self.period = period
         
-    def money_flow_multiplier(self,close,low,high):
-        mfm = ((close - low) - (high - close)) / (high - low)
+    def money_flow_multiplier(self):
+        mfm = ((self.close - self.low) - (self.high - self.close)) / (self.high - self.low)
         try:
-            low/high
+            self.low/self.high
         except ZeroDivisionError as e:
             return "There is a data problem."
             
         return mfm
 
-    def money_flow_volume(self,mfm, volume):
-        mfv = mfm * volume
+    def money_flow_volume(self):
+        mfv = self.mfm * self.volume
         return mfv
     
     def cmf(self):
-        #breakpoint()
         close = self.close
         low = self.low
         high = self.high
