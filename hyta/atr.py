@@ -17,7 +17,7 @@ class ATR:
         self.data_all = data_all
         self.true_value=true_value
        
-    def TrueRange(self) -> list:
+    def true_range(self) -> list:
         
         #listing the absolute value of the each all_data.
         #closing data comes from the day before.
@@ -29,10 +29,10 @@ class ATR:
         
         return tr
     
-    def AverageTrueRange(self) -> list:
+    def average_true_range(self) -> list:
         #Listing the avarage true range.
-        atr=[np.mean(self.TrueRange()[:self.true_value])]
+        atr=[np.mean(self.true_range()[:self.true_value])]
         for i in range(len(data_all[2])-self.true_value):
-            atr.append((atr[i]*(self.true_value-1)+self.TrueRange()[i+self.true_value])/self.true_value)
+            atr.append((atr[i]*(self.true_value-1)+self.true_range()[i+self.true_value])/self.true_value)
     
         return atr
