@@ -4,7 +4,7 @@ import numpy as np
 class ATR:
     '''
     This class calculates ATR for default True_Value=14.
-    True_Value 
+    True_Value must be positive integer. 
     data_all=np.array([data_high,data_low,data_close]) data comes with this format.
     
     Attributes
@@ -13,7 +13,7 @@ class ATR:
     True_Value: int
     '''
     
-    def __init__(self, data_all, true_value=14):
+    def __init__(self, data_all:np.array, true_value:int=14):
         self.data_all = data_all
         self.true_value=true_value
        
