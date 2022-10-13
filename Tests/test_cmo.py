@@ -7,7 +7,7 @@ class TestCMO(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls) -> None:
-        cls.df = pd.read_excel("files/datas.xlsx")
+        cls.df = pd.read_excel("files/CMO.xlsx")
 
     @classmethod
     def tearDownClass(cls) -> None:
