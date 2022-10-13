@@ -7,22 +7,7 @@ import matplotlib.pyplot as plt   # needs pip install if not installed
 
 #designing SMA bot 
 
-if __name__ == "__main__":
-    
- 
-    # passkey (saved in bashrc for linux)
-    api_key = os.environ.get('BINANCE_TESTNET_KEY') 
-    # secret (saved in bashrc for linux)
-    api_secret = os.environ.get('BINANCE_TESTNET_PASSWORD')  
-    client = Client(api_key, api_secret, testnet=True)
-    print("Using Binance TestNet Server")
- 
-    pprint.pprint(client.get_account())
-    # Change symbol here e.g. BTCUSDT, BNBBTC, ETHUSDT, NEOBTC
-    symbol = 'BNBUSDT'
-    main()
 
-    def get_hourly_dataframe():
     ''''valid intervals-1m, 3m, 5m, 15m, 30m, 1h, 2h, 4h, 6h, 8h, 12h, 1d, 3d, 
     1w, 1M request historical candle (or klines) data using timestamp from above 
     interval either every min, hr, day or month
@@ -51,14 +36,14 @@ class Sma:
         self.data=data
         self.smaPeriod=smaPeriod
 
-    def Sma():
-        symbol_df = get_hourly_dataframe()
+    def __get_hourly_dataframe():
 
+    
     def main():
         Sma()
 
     def Sma():
-        symbol_df = get_hourly_dataframe()
+        symbol_df = __get_hourly_dataframe()
         # calculate 5 moving average using Pandas
         symbol_df['5sma'] = symbol_df['close'].rolling(5).mean()
         # calculate 15 moving average using Pandas
