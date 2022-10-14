@@ -1,5 +1,5 @@
 import unittest
-from cmf import CMF 
+from hyta import CMF 
 import pandas as pd
 import numpy as np
 
