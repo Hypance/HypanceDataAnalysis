@@ -143,7 +143,7 @@ class TestUltimateOscillator(unittest.TestCase):
         
         self.assertGreaterEqual(np.nanmin(test),0)
 
-        self.assertLessEqual(np.nanmax(test),0)
+        self.assertLessEqual(np.nanmax(test),100)
         
         self.assertEqual(len(original[28:]),len(test)) 
 
