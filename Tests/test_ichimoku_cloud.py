@@ -10,7 +10,7 @@ class TestIchimokuCloud(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> pd.Series:
         
-        cls.data = pd.read_excel('Tests/data.xlsx')
+        cls.data = pd.read_excel('Tests/files/ICHIMOKUCLOUD.xlsx')
         cls.close = cls.data['close'].to_list()
         cls.high = cls.data['high'].to_list()
         cls.low = cls.data['low'].to_list()
