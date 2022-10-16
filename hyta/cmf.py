@@ -24,7 +24,6 @@ class CMF:
         Returns the cmf. 
 
     """
-    
     def __init__(self,close:pd.Series,low:pd.Series,high:pd.Series,volume:pd.Series,period:int=20):
         self.close = close
         self.low = low
