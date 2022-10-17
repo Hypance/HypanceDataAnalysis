@@ -39,3 +39,4 @@ class Sma:
         # calculate 15 moving average using Pandas
         symbol_df['15sma'] = symbol_df['close'].rolling(15).mean()
 
+
