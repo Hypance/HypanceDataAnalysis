@@ -18,25 +18,15 @@ import matplotlib.pyplot as plt   # needs pip install if not installed
     # "12 Sep, 2012"). #These intervals, the symbols of historical klines and 
     start time are changeable considering data worksheet'''
  
-    starttime = '1 Aug 2012'  # start date
-    interval = '1h'
-  
-    bars = client.get_historical_klines(symbol, interval, starttime) 
- 
-    # Keep only first 5 columns, "date" "open" "high" "low" "close"
-    for line in bars:
-        del line[5:]
-    #  2 dimensional tabular data
-    df = pd.DataFrame(bars, columns=['date', 'open', 'high', 'low', 'close'])   
-    return df
 
 class Sma:
 
-    def__init__(self,data,smaPeriod):
+    def __init__(self,data,smaPeriod):
         self.data=data
         self.smaPeriod=smaPeriod
 
     def __get_hourly_dataframe():
+        pass
 
     
     def main():
@@ -48,3 +38,4 @@ class Sma:
         symbol_df['5sma'] = symbol_df['close'].rolling(5).mean()
         # calculate 15 moving average using Pandas
         symbol_df['15sma'] = symbol_df['close'].rolling(15).mean()
+
