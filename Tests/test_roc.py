@@ -1,7 +1,7 @@
 import unittest
 import pandas as pd 
 import numpy as np
-from roc import ROC
+from hyta.roc import ROC
 
 class TestRateOfChange(unittest.TestCase):
     @classmethod

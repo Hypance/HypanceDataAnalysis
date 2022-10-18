@@ -20,7 +20,7 @@ class ROC:
     Returns a np.ndarray.
     '''
 
-    def RocCalc(self):
+    def roc_calc(self):
         ROC = np.array([])
         for i in range(len(self.close)-self.period):
             ROC = np.append(ROC,((self.close[i+self.period] - self.close[i]) / self.close[i])*100)
@@ -31,4 +31,4 @@ class ROC:
     '''
 
     def roc(self):
-        return self.RocCalc()
+        return self.roc_calc()
