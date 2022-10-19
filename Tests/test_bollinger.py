@@ -6,7 +6,7 @@ class TestBollinger(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.df = pd.read_excel("bollinger.xlsx")
+        cls.df = pd.read_excel("files/bollinger.xlsx")
         cls.indicator = Bollinger(cls.df,cls.df["Close"])
 
     @classmethod
