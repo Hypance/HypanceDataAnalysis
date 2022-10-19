@@ -5,7 +5,7 @@ from hyta.atr import ATR
 
 class TestAverageTrueRange(unittest.TestCase):
     
-    path=r"/Users/anilmehmetuyar/Downloads/ATR.xls"
+    path="files/ATR.xls"
 
     @classmethod
     def setUpClass(cls):
