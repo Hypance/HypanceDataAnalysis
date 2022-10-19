@@ -5,7 +5,7 @@ from hyta.psar import ParabolicSAR
 
 class TestPSAR(unittest.TestCase):
     
-    path=r"/Users/anilmehmetuyar/Downloads/PSAR.xlsx"
+    path="files/PSAR.xlsx"
 
     @classmethod
     def setUpClass(cls):
