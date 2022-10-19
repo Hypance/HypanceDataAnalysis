@@ -5,7 +5,7 @@ from hyta.macd import MACD
 
 class TestMACD(unittest.TestCase):
     
-    path=r"/Users/anilmehmetuyar/Downloads/MACD.xlsx"
+    path="files/MACD.xlsx"
 
     @classmethod
     def setUpClass(cls):
