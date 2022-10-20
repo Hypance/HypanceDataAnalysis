@@ -5,8 +5,7 @@ import pandas as pd
 class StochasticOscillator:
 
     def __init__(self,high,low,close,periods:int=5):
-        df=pd.Dataframe(data={"high":high,"low":low,"close":close})
-        self.periods=periods
+        df=pd.Dataframe(data={"high":high,"low":low,"close":close,"periods":periods})        
         
         
     def high_low_stoch(self):
