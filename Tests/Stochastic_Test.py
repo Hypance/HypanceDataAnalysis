@@ -1,6 +1,6 @@
 import unittest
 import pandas as pd
-from hyta.stochasticoscillator import StochasticOscillator
+from hyta.Stochastic_Oscillator import StochasticOscillator
 
 class TestStochasticOscillator(unittest.TestCase):
 
@@ -8,31 +8,28 @@ class TestStochasticOscillator(unittest.TestCase):
 
   @classmethod
   def setUpClass(cls):
-    cls.data=pd.read_excel(cls.path) 
+    cls.data=pd.read_excel(cls.path)
 
   @classmethod
   def tearDownClass(cls):
     del cls.data
-    del cls.close
-    del cls.low
-    del cls.high
+    
 
   def setUp(self)->None:
-    self.close=self.data["Close"]
-    self.low=self.data["Low"]
-    self.high=self.data["High"]
-    self.fast_stochastic=self.data["fast_stochastic"]
-    self.slow_stochastic=self.data["slow_stochastic"]
+    so=StochasticOscillator(data["high"],data["low"],data["close"],periods=5)
+    
+  def tearDown(self):
+    del so
 
   def test_fast_stochastic(self):
-    self.assertAlmostEqual(self.fast_stochastic[1],self.data["fast_stochastic"][1])
-    self.assertGreater=self.data["fast_stochastic",-1]
-    self.assertLess=self.data["fast_stochastic",1]
+    self.assertAlmostEqual(so.fast_stochastic()[1],self.data["fast_stochastic"][1])
+    self.assertGreater(so.fast_stochastic()[1],-1)
+    self.assertLess(so.fast_stochastic()[4],1)
     
-  def slow_stochastic(self):
-    self.assertAlmostEqual(self.slow_stochastic[1],self.data["slow_stochastic"][1])
-    self.assertGreater=self.data["slow_stochastic",-1]
-    self.assertLess=self.data["slow_stochastic",1]
+  def test_slow_stochastic(self):
+    self.assertAlmostEqual(so.slow_stochastic()[1],self.data["slow_stochastic"][1])
+    self.assertGreater(so.slow_stochastic()[1],-1)
+    self.assertLess(so.slow_stochastic()[4],1)
     
 
 if__name__ =='__main__':
