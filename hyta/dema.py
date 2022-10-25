@@ -1,8 +1,6 @@
 from hyta.ema import EMA
 import numpy as np
-import pandas as pd
-import openpyxl
-import xlrd
+
 class DEMA:
 
     def __init__(self, period=9):
