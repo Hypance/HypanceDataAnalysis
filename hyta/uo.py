@@ -1,4 +1,5 @@
-import numpy as np 
+import numpy as np
+import pandas as pd 
 
 class UO:
     '''
@@ -12,45 +13,49 @@ class UO:
         self.low = low
         self.close = close
     
-    '''
-    This module, we calculate buying pressure with
-    'buying pressure = close - min(low,PriorClose)'
-    this equation.
-    It needs to get close and low values.
-    Returns the BuyingPressure array.
-    Type of array is np.ndarray.
-    '''
     def buyingPressure(self):
+    
+        '''
+        This module, we calculate buying pressure with
+        'buying pressure = close - min(low,PriorClose)'
+        this equation.
+        It needs to get close and low values.
+        Returns the BuyingPressure array.
+        Type of array is np.ndarray.
+        '''
+
         BP = []
         for i in range(0,len(self.close)-1):
             bp = self.close[i+1] - min(self.low[i+1],self.close[i])
             BP.append(bp)
         return np.array(BP)
     
-    '''
-    This module, we calculate buying pressure with
-    'true range = max(high,PriorClose) - min(low,PriorClose)'
-    this equation.
-    It needs to get high,close and low values.
-    Returns the trueRange array.
-    Type of array is np.ndarray.
-    '''
+    
 
     def trueRange(self):
+        '''
+        This module, we calculate buying pressure with
+        'true range = max(high,PriorClose) - min(low,PriorClose)'
+        this equation.
+        It needs to get high,close and low values.
+        Returns the trueRange array.
+        Type of array is np.ndarray.
+        '''
         TR = []
         for i in range(1,len(self.high)):
             tr = max(self.high[i],self.close[i-1]) - min(self.low[i],self.close[i-1])  
             TR.append(tr)
         return np.array(TR)
-    '''
-    This module, we calculate 7-periods average with
-    'A7 = (Sum of 7 period BP) / (Sum of 7 period TR)'
-    this equation.
-    It needs to get BP and TR values.
-    Returns the A7 array.
-    Type of array is np.ndarray.
-    '''
+    
     def Average7(self):
+        '''
+        This module, we calculate 7-periods average with
+        'A7 = (Sum of 7 period BP) / (Sum of 7 period TR)'
+        this equation.
+        It needs to get BP and TR values.
+        Returns the A7 array.
+        Type of array is np.ndarray.
+        '''
         cumulativeBP = np.cumsum(self.buyingPressure())
         cumulativeBP = np.insert(cumulativeBP,0,0)
     
@@ -64,16 +69,17 @@ class UO:
         A7 = np.array(sevenPeriodedBP)/np.array(sevenPeriodedTR)
         
         return A7
-    '''
-    This module, we calculate 14-periods average with
-    'A14 = (Sum of 14 period BP) / (Sum of 14 period TR)'
-    this equation.
-    It needs to get BP and TR values.
-    Returns the A14 array.
-    Type of array is np.ndarray.
-    '''
+    
 
     def Average14(self):
+        '''
+        This module, we calculate 14-periods average with
+        'A14 = (Sum of 14 period BP) / (Sum of 14 period TR)'
+        this equation.
+        It needs to get BP and TR values.
+        Returns the A14 array.
+        Type of array is np.ndarray.
+        '''
         cumulativeBP = np.cumsum(self.buyingPressure())
         cumulativeBP = np.insert(cumulativeBP,0,0)
     
@@ -88,16 +94,17 @@ class UO:
         
         return A14
 
-    '''
-    This module, we calculate 28-periods average with
-    'A28 = (Sum of 28 period BP) / (Sum of 28 period TR)'
-    this equation.
-    It needs to get BP and TR values.
-    Returns the A28 array.
-    Type of array is np.ndarray.
-    '''
+    
 
     def Average28(self):
+        '''
+        This module, we calculate 28-periods average with
+        'A28 = (Sum of 28 period BP) / (Sum of 28 period TR)'
+        this equation.
+        It needs to get BP and TR values.
+        Returns the A28 array.
+        Type of array is np.ndarray.
+        '''
         cumulativeBP = np.cumsum(self.buyingPressure())
         cumulativeBP = np.insert(cumulativeBP,0,0)
         
@@ -111,18 +118,18 @@ class UO:
         A28 = np.array(twentyeightPeriodedBP)/np.array(twentyeightPeriodedTR)
         
         return A28
-    '''
-    This module is final module.
-    This calculates the UltimateOscillator for 28 periods.
-    Needs to get A7,A14,A28 arrays.
-    Returns ultOsc with type of np.ndarray
-    Due to not returns any NaN values, we use index slicing.
-    '''
 
     def uo(self):
+        '''
+        This module is final module.
+        This calculates the UltimateOscillator for 28 periods.
+        Needs to get A7,A14,A28 arrays.
+        Returns ultOsc with type of np.ndarray
+        Due to not returns any NaN values, we use index slicing.
+        '''
         A7 = self.Average7()
         A14 = self.Average14()
         A28 = self.Average28()
         numerator = ( A7[21:]*4  +  A14[14:]*2 + A28 )
         ultOsc = ( numerator / 7 ) * 100
-        return ultOsc
+        return pd.Series(ultOsc)
