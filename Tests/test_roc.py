@@ -27,14 +27,16 @@ class TestRateOfChange(unittest.TestCase):
         original = np.array(self.df["ROC"][12:])
         
         test = ROC(self.close).roc()
+        
+        self.assertIsNotNone(test)
                 
         self.assertAlmostEqual(original[-1],test[-1]) 
         
         self.assertEqual(len(original),len(test)) 
 
-        self.assertIsInstance(test,np.ndarray)
+        self.assertIsInstance(test,pd.Series)
 
-        self.assertIsNotNone(test)
+ 
 
 if __name__ == "__main__":
     unittest.main()
