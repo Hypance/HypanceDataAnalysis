@@ -8,9 +8,10 @@ class CMF:
     Attributes
     ----------
     close : pandas.Series
-    low : pandas.Series
-    high : pandas.Series
+    low   : pandas.Series
+    high  : pandas.Series
     volume: pandas.Series
+    period: pandas.Series
 
     Methods
     -------
@@ -36,7 +37,7 @@ class CMF:
         try:
             self.low/self.high
         except ZeroDivisionError as e:
-            return "There is a data problem."
+            print("Value of high is zero:", e)
         
         return mfm
 
