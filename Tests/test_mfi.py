@@ -8,7 +8,7 @@ class TestCmf(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.data = pd.read_excel('Files/cs-mfi.1.xls')
+        cls.data = pd.read_excel('files/cs-mfi.1.xls')
 
     @classmethod
     def tearDownClass(cls):
