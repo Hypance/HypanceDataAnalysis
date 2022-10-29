@@ -4,8 +4,8 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name='HypanceDataAnalysis',
-    version='0.0.2',
+    name='hyta',
+    version='0.0.3',
     author='Toygar Aksoy',
     author_email='toygar.aksoy@gmail.com',
     description='Indicators for Hypance Project',
