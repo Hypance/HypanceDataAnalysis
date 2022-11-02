@@ -56,7 +56,7 @@ class TestRSI(unittest.TestCase):
     Returning list is same type as we want(pandas series)
     '''
 
-    def test_loss_calculator(self):
+    def test_rsi(self):
         originalRsi = pd.Series(self.df["RSI"])
         testRsi = RSI(self.df["Close"]).rsi()
 
