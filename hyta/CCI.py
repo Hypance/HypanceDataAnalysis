@@ -1,7 +1,4 @@
 import pandas as pd
-import pprint
-import yfinance
-import matplotlib.pyplot as plt
 
 class CCI:
   def __init__(self,high,slow,close):
@@ -10,18 +7,17 @@ class CCI:
 #typical_price as TP
 
   def TP(self):
-    df = pd.DataFrame([self.df])
-  df['TP']=(df["High"]+df["Slow"]+df["Close"])/3
+    df['TP']=(df["High"]+df["Slow"]+df["Close"])/3
     return df['TP']
 
-#Simple_Moving_Average as SMA
+#Simple_Moving_Average as SMA. It is calculated through TP.
   
   def SMA(self):
     df = self.TP()
     df['SMA'] = df['TP'].rolling().mean()
     return df['SMA']
 
-#Mean_Deviation as MD
+#Mean_Deviation as MD. It is calculated through TP.
 
   def MD(self):
     df = self.TP()
