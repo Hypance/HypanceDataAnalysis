@@ -1,5 +1,3 @@
-import os
-import pprint
 import pandas as pd     # needs pip install if not installed
  
 class Sma:
@@ -7,8 +5,6 @@ class Sma:
     def __init__(self,close):
         self.df=pd.DataFrame(data={"close":close})
 
-    def main():
-        Sma()
 
     def Sma(self):
         df = pd.DataFrame([self.df])
