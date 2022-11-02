@@ -1,5 +1,4 @@
 import pandas as pd
-import xlrd
 
 class Aroon():
     """
@@ -56,6 +55,4 @@ class Aroon():
     def aroon_oscilattor(self) -> float:
         return self.aroon_up - self.aroon_down()
 
-data = pd.read_excel("/Users/esra/Library/Containers/com.microsoft.Excel/Data/Downloads/Aroon.Oscillator.xls")
-adj = data["Adj Close"]
 
