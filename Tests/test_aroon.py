@@ -6,7 +6,7 @@ class TestRSI(unittest.TestCase):
 
      @classmethod
      def setUpClass(cls) -> None:
-         cls.df = pd.read_excel("/Users/esra/Library/Containers/com.microsoft.Excel/Data/Downloads/Aroon.Oscillator.xls")
+         cls.df = pd.read_excel("files/Aroon.Oscillator.xls")
      @classmethod
      def tearDownClass(cls) -> None:
          del cls.df
