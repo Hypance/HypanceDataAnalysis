@@ -2,7 +2,7 @@ import pandas as pd
 from hyta.Aroon import Aroon
 import unittest
 
-class TestRSI(unittest.TestCase):
+class TestAroon(unittest.TestCase):
 
      @classmethod
      def setUpClass(cls) -> None:
