@@ -1,34 +1,34 @@
 
 import pandas as pd
 
+
+
 class StochasticOscillator:
 
-    def __init__(self,list,periods:int=5):
-        self.list=list
+    def __init__(self,high,low,close,periods=5):
         self.periods=periods
-
-    def High_Low_Stoch(self):
-        df = pd.DataFrame([self.list])
-
-        high_roll = df["High"].rolling(self.periods).max()
-        low_roll = df["Low"].rolling(self.periods).min()
+        self.df=pd.DataFrame(data={"high":high,"low":low,"close":close})
+        
+           
+    def high_low_stoch(self):
+        
+        df["high_roll"] = self.df["high"].rolling(self.periods).max()
+        df["low_roll"] = self.df["low"].rolling(self.periods).min()
         return df
 
     # Fast stochastic indicator
     
-    def Fast_Stochastic():
-        num = df["Close"] - low_roll
-        denom = high_roll - low_roll
+    def fast_stochastic(self):
+        df=self.high_low_stoch()      
+        num = df["close"] - df["low_roll"]
+        denom = df["high_roll"]-df["low_roll"]
         df["%K"] = (num / denom) * 100
         return  df["%K"]
 
     # Slow stochastic indicator
     
-    def Slow_Stochastic():
+    def slow_stochastic(self):
+        df["%K"]=self.fast_stochastic()
         df["%D"]= df["%K"].rolling(3).mean()
         return df["%D"]
-    
-    def StochasticOscillator(self):
-        return self.High_Low_Stoch()
-
 
