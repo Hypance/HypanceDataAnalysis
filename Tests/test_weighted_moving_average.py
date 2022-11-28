@@ -1,5 +1,5 @@
 import unittest
-from weighted_moving_average import WeightedMovingAverage
+from hyta.weighted_moving_average import WeightedMovingAverage
 
 
 class TestWeightedMovingAverage(unittest.TestCase):
