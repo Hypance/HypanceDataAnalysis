@@ -2,7 +2,7 @@ import pandas as pd
 
 class Aroon():
     """
-    This class calculate the aroon function for default 14-days period.
+    This class calculate the aroon function for default 25-days period.
     To calculate this function It needs 'high' and 'low' values.
     """
 
@@ -53,6 +53,6 @@ class Aroon():
     """
 
     def aroon_oscilattor(self) -> float:
-        return self.aroon_up - self.aroon_down()
+        return self.aroon_up() - self.aroon_down()
 
 
