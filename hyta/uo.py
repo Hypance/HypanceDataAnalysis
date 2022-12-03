@@ -8,12 +8,12 @@ class UO:
     It needs to get 'low','close' and 'high' values respectively.
 
     '''
-    def __init__(self,low,close,high):
+    def __init__(self,low,close,high) -> None :
         self.high = high
         self.low = low
         self.close = close
     
-    def buyingPressure(self):
+    def buyingPressure(self) -> np.ndarray:
     
         '''
         This module, we calculate buying pressure with
@@ -32,7 +32,7 @@ class UO:
     
     
 
-    def trueRange(self):
+    def trueRange(self) -> np.ndarray:
         '''
         This module, we calculate buying pressure with
         'true range = max(high,PriorClose) - min(low,PriorClose)'
@@ -47,7 +47,7 @@ class UO:
             TR.append(tr)
         return np.array(TR)
     
-    def Average7(self):
+    def Average7(self) -> np.ndarray:
         '''
         This module, we calculate 7-periods average with
         'A7 = (Sum of 7 period BP) / (Sum of 7 period TR)'
@@ -71,7 +71,7 @@ class UO:
         return A7
     
 
-    def Average14(self):
+    def Average14(self) -> np.ndarray:
         '''
         This module, we calculate 14-periods average with
         'A14 = (Sum of 14 period BP) / (Sum of 14 period TR)'
@@ -96,7 +96,7 @@ class UO:
 
     
 
-    def Average28(self):
+    def Average28(self) -> np.ndarray:
         '''
         This module, we calculate 28-periods average with
         'A28 = (Sum of 28 period BP) / (Sum of 28 period TR)'
@@ -119,12 +119,12 @@ class UO:
         
         return A28
 
-    def uo(self):
+    def uo(self) -> pd.Series:
         '''
         This module is final module.
         This calculates the UltimateOscillator for 28 periods.
         Needs to get A7,A14,A28 arrays.
-        Returns ultOsc with type of np.ndarray
+        Returns ultOsc with type of pd.Series
         Due to not returns any NaN values, we use index slicing.
         '''
         A7 = self.Average7()

@@ -10,7 +10,7 @@ class TestUltimateOscillator(unittest.TestCase):
         cls.close = np.array(cls.df["close"])
         cls.high = np.array(cls.df["high"])
         cls.low = np.array(cls.df["low"])
-    
+
     @classmethod
     def tearDownClass(cls) -> None:
         del cls.df
