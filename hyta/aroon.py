@@ -20,7 +20,7 @@ class Aroon():
         return (self.period - df + 1).squeeze()
 
 
-    def __low_finder(self):
+    def __low_finder(self)-> pd.Series:
         """
         This method finds the lowest data in the period and calculates how many periods
         are there after that the lowest data.
