@@ -1,4 +1,4 @@
-import pandas 
+import pandas as pd
 import unittest
 
 from hyta.momentum import Momentum
@@ -7,7 +7,7 @@ class TestMomentum(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.data= pd.read_excel('files/momentum.xlsx')        
-        cls.cloeses_list=  cls.data['cloeses_list'].to_list()        
+        cls.closes_list=  cls.data['cloeses_list'].to_list()        
         cls.result = cls.data['result'].to_list()
         cls.period = cls.data['period'].to_list()
     @classmethod
@@ -18,9 +18,9 @@ class TestMomentum(unittest.TestCase):
 
     def test_momentum_input(self):
         # check input type
-        self.assertIsNotNone(self.cloeses_list[47])
-        self.assertIsInstance(self.cloeses_list[1],float)
-        self.assertIsInstance(self.cloeses_list,list)
+        self.assertIsNotNone(self.closes_list[47])
+        self.assertIsInstance(self.closes_list[1],float)
+        self.assertIsInstance(self.closes_list,list)
 
         # check  period
         self.assertIsInstance(self.period[1],int)
@@ -28,7 +28,7 @@ class TestMomentum(unittest.TestCase):
 
     def test_momentum_result(self):
         
-        M = Momentum(self.cloeses_list,5)
+        M = Momentum(self.closes_list,5)
         #check the value of result
         
         #if you find result right result, you must write period-1 for this test.It is not rural.
