@@ -1,5 +1,5 @@
 import unittest
-import pandas
+import pandas as pd
 from hyta.weighted_moving_average import WeightedMovingAverage
 
 
