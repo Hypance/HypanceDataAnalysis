@@ -12,7 +12,7 @@ class TestWiliiasR(unittest.TestCase):
         cls.highs = cls.data['High'].to_list()
         cls.lowest = cls.data['Low'].to_list()
         cls.closes = cls.data['Current Close'].to_list()
-        cls.result = [-29.56,-32.39,-10.80,-34.19,-18.25,-35.48,-25.47,-1.42,-29.90,-26.94,-26.58,-38.77,-39.04,-59.61,-59.61,-33.17,-43.27]
+        cls.result = cls.data['14R'].to_list()
                 
     @classmethod
     def tearDownClass(cls):
@@ -47,8 +47,3 @@ class TestWiliiasR(unittest.TestCase):
         #check result value
         self.assertAlmostEqual(self.result[-1], r.WILLIAMS_R(),2)        
         
-
-
-
-if __name__ == '__main__':
-    unittest.main()
