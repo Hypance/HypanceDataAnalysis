@@ -1,4 +1,4 @@
-from ema import EMA
+from hyta.ema import EMA
 import numpy as np
 import pandas as pd
 
@@ -75,9 +75,3 @@ class t3Tillson:
         """
         T3Tillson = self.c1 * self.e6 + self.c2 * self.e5 + self.c3 * self.e4 + self.c4 * (self.e3)
         return T3Tillson
-
-data = pd.read_excel("/Users/esra/Library/Containers/com.microsoft.Excel/Data/Downloads/t3tillson.xlsx")
-close = data["close"]
-
-work = t3Tillson()
-print(work.T3)
