@@ -6,7 +6,7 @@ class TestMomentum(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.data= pd.read_excel('files/momentum.xlsx')        
+        cls.data= pd.read_excel('Tests/files/momentum.xlsx')        
         cls.closes_list=  cls.data['cloeses_list'].to_list()        
         cls.result = cls.data['result'].to_list()
         cls.period = cls.data['period'].to_list()
