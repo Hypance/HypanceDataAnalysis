@@ -7,7 +7,7 @@ class CCI:
 #typical_price as TP
 
   def TP(self):
-    df['TP']=(df["High"]+df["low"]+df["Close"])/3
+    df['TP']=(df["high"]+df["low"]+df["close"])/3
     return df['TP']
 
 #Simple_Moving_Average as SMA. It is calculated through TP.
