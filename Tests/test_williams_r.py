@@ -8,7 +8,7 @@ class TestWiliiasR(unittest.TestCase):
     
     @classmethod
     def setUpClass(cls):
-        cls.data = pd.read_excel('files/WilliamR.xlsx')
+        cls.data = pd.read_excel('Tests/files/WilliamR.xlsx')
         cls.highs = cls.data['High'].to_list()
         cls.lowest = cls.data['Low'].to_list()
         cls.closes = cls.data['Current Close'].to_list()
