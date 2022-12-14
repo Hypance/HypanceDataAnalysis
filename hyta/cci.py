@@ -5,9 +5,15 @@ class CCI:
     self.df=pd.DataFrame(data={'high':high,'low':low,'close':close)
 
 #typical_price as TP
+<<<<<<< HEAD:hyta/CCI2.py
   def TP(self)->pd.Series:
     df=pd.DataFrame()
     df['TP']=(self.df["high"]+self.df["low"]+self.df["close"])/3
+=======
+
+  def TP(self):
+    df['TP']=(df["high"]+df["low"]+df["close"])/3
+>>>>>>> d4c8b2d97b2bfbca0ee59b011ce2765be178a878:hyta/cci.py
     return df['TP']
 
 #Simple_Moving_Average as SMA. It is calculated through TP.
