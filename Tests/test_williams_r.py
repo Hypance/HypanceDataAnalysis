@@ -6,7 +6,6 @@ from hyta.williams_r import WilliamsR
 
 class TestWiliiasR(unittest.TestCase):
 
-    
     @classmethod
     def setUpClass(cls):
         cls.data = pd.read_excel('Tests/files/WilliamR.xlsx')
