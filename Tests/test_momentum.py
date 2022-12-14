@@ -13,7 +13,7 @@ class TestMomentum(unittest.TestCase):
 
     @classmethod
     def tearDownClass(cls):
-        del cls.cloeses_list
+        del cls.closes_list
         del cls.result
         del cls.period
 
