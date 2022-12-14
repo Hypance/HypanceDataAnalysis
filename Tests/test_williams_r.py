@@ -35,7 +35,6 @@ class TestWiliiasR(unittest.TestCase):
         #check if result is None
         self.assertIsNotNone(r.WILLIAMS_R())
         
-
         #check if result is in limit.
         self.assertGreater(r.WILLIAMS_R(),-100)
         self.assertLess(r.WILLIAMS_R(),0)
