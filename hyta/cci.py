@@ -1,7 +1,7 @@
 import pandas as pd
 
 class CCI:
-  def __init__(self,high,slow,close):
+  def __init__(self,high,low,close):
     self.df=pd.DataFrame(data={'high':high,'low':low,'close':close)
 
 #typical_price as TP
