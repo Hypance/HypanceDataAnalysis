@@ -30,7 +30,6 @@ class TestWiliiasR(unittest.TestCase):
         self.assertGreater(self.result[8],-100)
         self.assertLess(self.result[10],0)
     
-    
     def test_result_williams_r(self):
         r = WilliamsR(self.closes[-1],self.lowest,self.highs)
         
