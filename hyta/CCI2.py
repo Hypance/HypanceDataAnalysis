@@ -1,36 +1,36 @@
 import pandas as pd
 
 class CCI:
-  def __init__(self,high,slow,close):
+  def __init__(self,high,low,close):
     self.df=pd.DataFrame(data={'high':high,'low':low,'close':close)
 
 #typical_price as TP
-
-  def TP(self):
-    df['TP']=(df["High"]+df["low"]+df["Close"])/3
+  def TP(self)->pd.Series:
+    df=pd.DataFrame()
+    df['TP']=(self.df["high"]+self.df["low"]+self.df["close"])/3
     return df['TP']
 
 #Simple_Moving_Average as SMA. It is calculated through TP.
-  
-  def SMA(self):
-    df = self.TP()
-    self.df['TP']=self.TP(self.df)
+  def SMA(self,tp:pd.Series)-> pd.Series:
+    df=pd.DataFrame()
+    df['TP']=tp.values
     df['SMA'] =df['TP'].rolling().mean()
     return df['SMA']
 
 #Mean_Deviation as MD. It is calculated through TP.
-
-  def MD(self):
-    df = self.TP()
-    self.df['TP']=self.TP(self.df)
+  def MD(self,tp:pd.Series)-> pd.Series:
+    df=pd.DataFrame()
+    df['TP']=tp.values
     df['MD']= df['TP'].rolling().apply(lambda x:pd.Series(x).MD())
     return df['MD']
   
 #Commodity_Channel_Index as CCI
-
   def CCI(self):
+    df=pd.DataFrame()
     df['TP'] = self.TP()
-    self.df['TP']=self.TP(self.df)
+    df['SMA']=self.SMA(df['TP'])
+    df['MD']=self.MD(df['TP'])
     df['CCI']= (df['TP']-df['SMA'])/(0.015*df['MD'])
     return df['CCI']   
+
 
