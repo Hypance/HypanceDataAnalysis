@@ -22,7 +22,7 @@ class Bollinger:
         df["Upper"] = df["SMA"] + 2 * df["stddev"]
         df["Lower"] = df["SMA"] - 2 * df["stddev"]
         
-        return df["Close"],df["Upper"],df["Close"]
+        return df["Upper"],df["Lower"]
 
 
 
