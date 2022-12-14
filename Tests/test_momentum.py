@@ -10,6 +10,7 @@ class TestMomentum(unittest.TestCase):
         cls.closes_list=  cls.data['cloeses_list'].to_list()        
         cls.result = cls.data['result'].to_list()
         cls.period = cls.data['period'].to_list()
+
     @classmethod
     def tearDownClass(cls):
         del cls.cloeses_list
