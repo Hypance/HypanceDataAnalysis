@@ -7,7 +7,7 @@ class TestWeightedMovingAverage(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.data = pd.read_excel('files/wma.xlsx')
+        cls.data = pd.read_excel('Tests/files/wma.xlsx')
         cls.close = cls.data['close'].to_list()
         cls.period= cls.data['period'].to_list()
         cls.result = cls.data['result'].to_list()
