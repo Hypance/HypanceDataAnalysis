@@ -9,7 +9,7 @@ class TestMomentum(unittest.TestCase):
         cls.data= pd.read_excel('Tests/files/momentum.xlsx')        
         cls.closes_list=  cls.data['cloeses_list'].to_list()        
         cls.result = cls.data['result'].to_list()
-        cls.period = cls.data['period'].to_list()
+        cls.period = list(map(int,cls.data['period'].dropna().to_list()))
 
     @classmethod
     def tearDownClass(cls):
