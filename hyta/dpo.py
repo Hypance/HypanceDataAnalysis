@@ -22,4 +22,4 @@ class DPO:
     #Starting function, it returns a list.
     def dpo(self): 
         dpoFinalize = np.subtract(self.closes(),self.moving_average())
-        return list(dpoFinalize)
+        return dpoFinalize
