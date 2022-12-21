@@ -95,6 +95,7 @@ class DX:
     def di_sum(self):
         di_sum = self.plus_di_14() + self.minus_di_14()
         return di_sum
+        
     
     def dx(self):
         dx = abs(100*(self.di_diff() / self.di_sum()))
