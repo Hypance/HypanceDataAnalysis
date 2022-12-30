@@ -3,7 +3,7 @@ import pandas as pd
 from hyta.atr import ATR
 
 class DX:
-
+    
     def __init__(self,high:pd.Series,low:pd.Series,close:pd.Series,period:int=14) -> None:
         self.high = high
         self.Low = low
@@ -22,7 +22,7 @@ class DX:
         for i in range(1,len(self.Low)):
             low_diff = self.Low[i-1] - self.dx_data["Low"][i]
             high_diff = self.dx_data["High"][i] - self.dx_data["High"][i-1]
-                        
+            
             if high_diff > low_diff :
                 first.append(max(high_diff,0))
             else:
