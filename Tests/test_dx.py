@@ -7,7 +7,7 @@ class testDX(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls) -> None:
-        cls.data = pd.read_excel("files/cs-dx.xlsx")
+        cls.data = pd.read_excel("Tests/files/cs-dx.xlsx")
 
     @classmethod
     def tearDownClass(cls) -> None:
