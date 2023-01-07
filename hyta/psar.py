@@ -23,6 +23,9 @@ class ParabolicSAR:
     def parabolic_sar(self) -> list:
         
         #first, setting up initial values 
+        low = self.low
+        high = self.high
+        close = self.close
 
         #ep is a list of extremum points
         ep=[low[0]]  
@@ -90,5 +93,4 @@ class ParabolicSAR:
             #decide on the result of ((psar-ep)*acc_point)   
             calc_psar.append((psar[i+1]-ep[i+1])*acc_point[i+1])
 
-                
         return psar

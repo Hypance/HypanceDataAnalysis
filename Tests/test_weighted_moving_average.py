@@ -9,8 +9,9 @@ class TestWeightedMovingAverage(unittest.TestCase):
     def setUpClass(cls):
         cls.data = pd.read_excel('Tests/files/wma.xlsx')
         cls.close = cls.data['close'].to_list()
-        cls.period= cls.data['period'].to_list()
+        cls.period= list(map(int, cls.data['period'].dropna().to_list()))
         cls.result = cls.data['result'].to_list()
+
     @classmethod
     def tearDownClass(cls):
         del cls.data
@@ -31,8 +32,6 @@ class TestWeightedMovingAverage(unittest.TestCase):
         self.assertIsNotNone(self.period[0])
         self.assertIsNotNone(self.close[29])
         
-
-
     def test_wma(self):
         wma = WeightedMovingAverage(self.close,self.period[1])
         #check result value
@@ -41,6 +40,3 @@ class TestWeightedMovingAverage(unittest.TestCase):
         #check result type
         self.assertIsInstance(wma.weighted_moving_average(),float)
         self.assertNotIsInstance(wma.weighted_moving_average(), str)
-
-
-        
