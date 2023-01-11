@@ -20,20 +20,20 @@ class TestStochasticOscillator(unittest.TestCase):
     self.low=self.data["low"]
     self.close=self.data["close"]
     self.StochasticOscillator_data=StochasticOscillator(self.high,self.low,self.close)
-    so=StochasticOscillator(data["high"],data["low"],data["close"],periods=5)
+    self.so=StochasticOscillator(self.data["high"],self.data["low"],self.data["close"],periods=5)
     
   def tearDown(self):
-    del so
+    del self.so
 
   def test_fast_stochastic(self):
-    self.assertAlmostEqual(so.fast_stochastic()[10],self.data["fast_stochastic"][10])
-    self.assertGreater(so.fast_stochastic()[15],-1)
-    self.assertLess(so.fast_stochastic()[35],99)
+    self.assertAlmostEqual(self.so.fast_stochastic()[10],self.data["fast_stochastic"][10])
+    self.assertGreater(self.so.fast_stochastic()[15],-1)
+    self.assertLess(self.so.fast_stochastic()[35],99)
     
   def test_slow_stochastic(self):
-    self.assertAlmostEqual(so.slow_stochastic()[10],self.data["slow_stochastic"][10])
-    self.assertGreater(so.slow_stochastic()[15],-1)
-    self.assertLess(so.slow_stochastic()[37],99)
+    self.assertAlmostEqual(self.so.slow_stochastic()[10],self.data["slow_stochastic"][10])
+    self.assertGreater(self.so.slow_stochastic()[15],-1)
+    self.assertLess(self.so.slow_stochastic()[37],99)
     
 
 if __name__ =='__main__':
