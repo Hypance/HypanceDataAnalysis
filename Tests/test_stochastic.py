@@ -16,11 +16,11 @@ class TestStochasticOscillator(unittest.TestCase):
     
 
   def setUp(self)->None:
-    self.high=self.data["high"]
-    self.low=self.data["low"]
-    self.close=self.data["close"]
+    self.high=self.data["High"]
+    self.low=self.data["Low"]
+    self.close=self.data["Close"]
     self.StochasticOscillator_data=StochasticOscillator(self.high,self.low,self.close)
-    self.so=StochasticOscillator(self.data["high"],self.data["low"],self.data["close"],periods=5)
+    self.so=StochasticOscillator(self.data["High"],self.data["Low"],self.data["Close"],periods=5)
     
   def tearDown(self):
     del self.so
