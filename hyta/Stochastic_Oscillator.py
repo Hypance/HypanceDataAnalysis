@@ -3,11 +3,13 @@ import pandas as pd
 
 class StochasticOscillator:
 
-    def __init__(self,list,periods:int=5):
-        self.list=list
+    def __init__(self,high,low,close,periods:int=5):
+        self.high=high
+        self.low=low
+        self.close=close
         self.periods=periods
 
-        self.df = pd.DataFrame([self.list])
+        self.df = pd.DataFrame({"High":self.high,"Low":self.low,"Close":self.close})
 
     def High_Low_Stoch(self):
         self.high_roll = self.df["High"].rolling(self.periods).max()
