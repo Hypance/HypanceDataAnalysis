@@ -9,15 +9,15 @@ class StochasticOscillator:
         self.close=close
         self.periods=periods
         self.df = pd.DataFrame({"High":self.high,"Low":self.low,"Close":self.close})
-        self.high_roll=self.high_roll()
-        self.low_roll=self.low_roll()
+        self.high_roll=self.highroll()
+        self.low_roll=self.lowroll()
 
-    def high_roll(self):
+    def highroll(self):
         self.high_roll = self.df["High"].rolling(self.periods).max()
         return self.high_roll
 
     
-    def low_roll(self):
+    def lowroll(self):
         self.low_roll = self.df["Low"].rolling(self.periods).min()
         return self.low_roll
 
@@ -35,7 +35,9 @@ class StochasticOscillator:
         self.df["%D"]= self.df["%K"].rolling(3).mean()
         return self.df["%D"]
     
-    def stochastic_oscillator(self):
-        return self.high_low_stoch()
+    def stochasticoscillator(self):
+        fast_stochastic()
+        slow_stochastic()
+        return self.df
 
 
