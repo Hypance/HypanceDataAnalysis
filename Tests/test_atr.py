@@ -5,7 +5,7 @@ from hyta.atr import ATR
 
 class TestAverageTrueRange(unittest.TestCase):
     
-    path="files/ATR.xls"
+    path="Tests/files/ATR.xls"
 
     @classmethod
     def setUpClass(cls):
@@ -30,29 +30,24 @@ class TestAverageTrueRange(unittest.TestCase):
     #below function is testing true range results with respect to excel spreadsheet    
     def test_tr(self):
         self.result = ATR(self.data_all)
-        
         self.assertEqual(self.result_tr[0], self.result.true_range()[0])
         self.assertEqual(self.result_tr[2], self.result.true_range()[2])    
         self.assertEqual(round(self.result_tr[-1],2), round(self.result.true_range()[-1],2))
-       
         self.assertEqual(len(self.result_tr), len(self.result.true_range()))
         
     #below function is testing average true range results with respect to excel spreadsheet           
     def test_atr(self):  
         self.result = ATR(self.data_all)
-	self.true_value1=14
-
+        self.true_value1=14
         self.assertEqual(round(self.result_atr[self.true_value1+1],2), round(self.result.average_true_range()[2],2))
         self.assertEqual(round(self.result_atr[2],2), round(self.result.average_true_range()[2],2))
         self.assertEqual(self.result_atr[-1], self.result.average_true_range()[-1])
-   
         self.assertEqual(len(self.result_atr)-self.true_value1+1, len(self.result.average_true_range()))        
     
     #below function is testing corresponding tr and atr results
     def test_tr_atr(self):
         self.result = ATR(self.data_all)
         self.true_value1=14
-
         self.assertGreater(len(self.result.true_range()), len(self.result.average_true_range()))
         self.assertEqual(len(self.result.true_range())-len(self.result.average_true_range()),self.true_value1-1)  
     
@@ -61,12 +56,10 @@ class TestAverageTrueRange(unittest.TestCase):
         self.result_tr_20=ATR(self.data_all,20).true_range()
         self.result_atr_20=ATR(self.data_all,20).average_true_range()
         self.true_value2=20
-
         self.assertEqual(len(self.result_tr_20)-len(self.result_atr_20),self.true_value2-1) 
         
     def test_atr_none(self):
         self.result_atr_none=ATR(self.data_all,0).average_true_range()  
-
         np.testing.assert_equal(self.result_atr_none[-1],np.nan)
         
 if __name__ == '__main__':
