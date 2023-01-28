@@ -6,7 +6,7 @@ from hyta.CCI import CCI
 class TestCCI(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.path = "Tests/files/CCI.xlsx"
+        cls.path = "Tests/files/CCI.xls"
         cls.data = pd.read_excel(cls.path)
 
     @classmethod
