@@ -1,6 +1,6 @@
 import pandas as pd     
  
-class Sma:
+class SMA:
 
     def __init__(self,close,period):
         self.df=pd.DataFrame(data={"close":close})
