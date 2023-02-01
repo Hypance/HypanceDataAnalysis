@@ -1,7 +1,7 @@
 import pandas as pd     
  
 class SMA:
-    def __init__(self,close,period):
+    def __init__(self,close,period=5):
         self.df=pd.DataFrame(data={"close":close})
         self.period=period
 
