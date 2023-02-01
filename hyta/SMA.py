@@ -8,7 +8,6 @@ class SMA:
 
 
     def Sma(self):
-        df = pd.DataFrame([self.df])
         # calculate given period moving average using Pandas
-        df['sma'] = df['close'].rolling(self.period).mean()
-        return df['sma']
+        self.df['sma'] = self.df['close'].rolling(self.period).mean()
+        return self.df['sma']
