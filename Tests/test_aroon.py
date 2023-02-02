@@ -1,12 +1,12 @@
 import pandas as pd
-from hyta.Aroon import Aroon
+from hyta.aroon import Aroon
 import unittest
 
 class TestAroon(unittest.TestCase):
 
      @classmethod
      def setUpClass(cls) -> None:
-         cls.df = pd.read_excel("files/Aroon.Oscillator.xls")
+         cls.df = pd.read_excel("Tests/files/Aroon.Oscillator.xls")
      @classmethod
      def tearDownClass(cls) -> None:
          del cls.df
@@ -24,7 +24,7 @@ class TestAroon(unittest.TestCase):
 
          self.assertAlmostEqual(originalAroonUp[26], testAroonUp[26])
 
-         self.assertAlmostEqual(originalAroonUp[-1], testAroonUp[-1], places=7)
+         self.assertAlmostEqual(originalAroonUp.iloc[-1], testAroonUp.iloc[-1], places=7)
 
          self.assertEqual(len(originalAroonUp), len(testAroonUp))
 
@@ -43,7 +43,7 @@ class TestAroon(unittest.TestCase):
 
          self.assertAlmostEqual(originalAroonDown[26], testAroonDown[26])
 
-         self.assertAlmostEqual(originalAroonDown[-1], testAroonDown[-1], places=7)
+         self.assertAlmostEqual(originalAroonDown.iloc[-1], testAroonDown.iloc[-1], places=7)
 
          self.assertEqual(len(originalAroonDown), len(testAroonDown))
 
@@ -61,8 +61,8 @@ class TestAroon(unittest.TestCase):
          testAroonOscilattor = Aroon(self.df["Adj Close"]).aroon_oscilattor()
 
          self.assertAlmostEqual(originalAroonOscilattor[26], testAroonOscilattor[26])
-
-         self.assertAlmostEqual(originalAroonOscilattor[-1], testAroonOscilattor[-1], places=7)
+        #  print(originalAroonOscilattor, testAroonOscilattor)
+         self.assertAlmostEqual(originalAroonOscilattor.iloc[-1], testAroonOscilattor.iloc[-1], places=7)
 
          self.assertEqual(len(originalAroonOscilattor), len(testAroonOscilattor))
 

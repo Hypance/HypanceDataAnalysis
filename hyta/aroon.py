@@ -6,7 +6,7 @@ class Aroon():
     To calculate this function It needs adj close value.
     """
 
-    def __init__(self, period=25) -> None:
+    def __init__(self, adj_close, period=25) -> None:
         self.period = period
         self.df = pd.DataFrame(data={"Adj Close": adj_close})
 
