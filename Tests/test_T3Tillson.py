@@ -1,5 +1,5 @@
 import pandas as pd
-from t3tillson import t3Tillson
+from hyta.t3tillson import t3Tillson
 import unittest
 
 class TestT3Tillson(unittest.TestCase):
@@ -12,7 +12,7 @@ class TestT3Tillson(unittest.TestCase):
     
     @classmethod
     def setUpClass(cls) -> None:
-        cls.df = pd.read_excel("files/t3tillson.xlsx")
+        cls.df = pd.read_excel("Tests/files/t3tillson.xlsx")
     @classmethod
     def tearDownClass(cls) -> None:
         del cls.df
@@ -23,7 +23,7 @@ class TestT3Tillson(unittest.TestCase):
 
         self.assertAlmostEqual(originalEma1[100], testEma1[100])
 
-        self.assertAlmostEqual(originalEma1[-1], testEma1[-1], places=7)
+        self.assertAlmostEqual(originalEma1.iloc[-1], testEma1.iloc[-1], places=7)
 
         self.assertEqual(len(originalEma1), len(testEma1))
 

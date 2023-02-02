@@ -18,7 +18,7 @@ class t3Tillson:
 
      """
 
-    def __init__(self, period: int = 9) -> None:
+    def __init__(self, close, period: int = 9) -> None:
         self.period = period
         self.a = 0.618
         self.c1 = -self.a ** 3
@@ -26,10 +26,17 @@ class t3Tillson:
         self.c3 = -6*(self.a ** 2) - 3 * self.a - 3 * (self.a ** 3)
         self.c4 = 1 + 3 * self.a + self.a ** 3 + 3 * (self.a ** 2)
         self.df = pd.DataFrame(data={"Close": close})
+        self.close = self.df["Close"]
+        self.e1 = self.ema1()
+        self.e2 = self.ema2()
+        self.e3 = self.ema3()
+        self.e4 = self.ema4()
+        self.e5 = self.ema5()
+        self.e6 = self.ema6()
 
     def ema1(self) -> pd.Series:
         """
-        Calculates ema1 using cals_ema from EMA according to close and period.
+        Calculates ema1 using calc_ema from EMA according to close and period.
         """
         e1 = EMA(self.close, self.period).calc_ema()
         return e1
