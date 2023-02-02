@@ -6,7 +6,7 @@ class TestRSI(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls) -> None:
-        cls.df = pd.read_excel("files/RSI.xlsx")
+        cls.df = pd.read_excel("Tests/files/RSI.xlsx")
     @classmethod
     def tearDownClass(cls) -> None:
         del cls.df
@@ -24,7 +24,7 @@ class TestRSI(unittest.TestCase):
 
         self.assertAlmostEqual(originalGAIN[14], testGAIN[13])
 
-        self.assertAlmostEqual(originalGAIN[-1], testGAIN[-1], places=7)
+        self.assertAlmostEqual(originalGAIN.iloc[-1], testGAIN.iloc[-1], places=7)
 
         self.assertEqual(len(originalGAIN), len(testGAIN))
 
@@ -43,7 +43,7 @@ class TestRSI(unittest.TestCase):
 
         self.assertAlmostEqual(originalLOSS[15], testLOSS[15])
 
-        self.assertAlmostEqual(originalLOSS[-1], testLOSS[-1], places=7)
+        self.assertAlmostEqual(originalLOSS.iloc[-1], testLOSS.iloc[-1], places=7)
 
         self.assertEqual(len(originalLOSS), len(testLOSS))
 
@@ -62,7 +62,7 @@ class TestRSI(unittest.TestCase):
 
         self.assertAlmostEqual(originalRsi[15], testRsi[15])
 
-        self.assertAlmostEqual(originalRsi[-1], testRsi[-1], places=7)
+        self.assertAlmostEqual(originalRsi.iloc[-1], testRsi.iloc[-1], places=7)
 
         self.assertEqual(len(originalRsi), len(testRsi))
 

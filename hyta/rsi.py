@@ -24,6 +24,7 @@ class RSI:
 
     def gain_calculator(self) -> pd.Series:
         gain1 = []
+        close = self.close
         for i in range(0, len(close)-1):
             if close[i+1] > close[i]:
                 gain = round(close[i+1] - close[i],2)
@@ -44,6 +45,7 @@ class RSI:
 
     def loss_calculator(self) -> pd.Series:
         loss1 = []
+        close = self.close
         for i in range(0, len(close) - 1):
             if close[i] > close[i + 1]:
                 loss = round(close[i] - close[i + 1], 2)
