@@ -6,7 +6,7 @@ from hyta.dpo import DPO
 class Test_DetrendedPriceOscillator(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
-        cls.df = pd.read_excel("files/DPO.xlsx")    
+        cls.df = pd.read_excel("Tests/files/DPO.xlsx")    
 
     @classmethod
     def tearDownClass(cls) -> None:
