@@ -1,4 +1,4 @@
-from weighted_moving_average import WeightedMovingAverage
+from hyta.weighted_moving_average import WeightedMovingAverage
 import math
 
 
@@ -67,60 +67,3 @@ class HullMovingAverage:
             self.raw_hma_list(), self.__number_rounder(math.sqrt(self.period))
         ).weighted_moving_average()
         return hma
-
-
-if __name__ == "__main__":
-    close = [
-        10.5,
-        9.78,
-        10.46,
-        10.51,
-        10.55,
-        10.72,
-        10.16,
-        10.25,
-        9.4,
-        9.5,
-        9.23,
-        8.5,
-        8.8,
-        8.33,
-        7.53,
-        7.61,
-        6.78,
-        8.6,
-        9.21,
-        8.95,
-        9.22,
-        9.1,
-        8.31,
-        8.37,
-        8.3,
-        7.78,
-        8.05,
-        8.1,
-        8.08,
-        7.49,
-        7.58,
-        8.17,
-        8.83,
-        8.91,
-        9.2,
-        9.76,
-        9.42,
-        9.3,
-        9.32,
-        9.04,
-        9.0,
-        9.33,
-        9.34,
-        8.49,
-        9.21,
-        10.15,
-        10.3,
-        10.59,
-        10.23,
-        10.0,
-    ]
-
-    print(HullMovingAverage(close, 20).hull_moving_average())
