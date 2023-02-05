@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 
 class CCI:
   def __init__(self,high,low,close, period):
@@ -22,7 +23,9 @@ class CCI:
   def MAD(self,tp:pd.Series)-> pd.Series:
     df=pd.DataFrame()
     df['TP']=tp.values
-    df['MAD']= df['TP'].rolling(20).mad()
+    x=pd.Series(x)
+    df['MAD']= df['TP'].rolling(20).values(x)
+    df['MAD']=np.median(np.absolute(x - np.median(x)))
     return df['MAD']
   
 #Commodity_Channel_Index as CCI
