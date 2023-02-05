@@ -66,4 +66,9 @@ class HullMovingAverage:
         hma = self.wma(
             self.raw_hma_list(), self.__number_rounder(math.sqrt(self.period))
         ).weighted_moving_average()
+<<<<<<< HEAD:hyta/hma.py
         return hma
+=======
+        return hma
+
+>>>>>>> e3bfb2189b8553aa7fed323365915dd54e753ff2:hyta/hull_moving_average.py
