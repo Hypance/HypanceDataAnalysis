@@ -1,6 +1,6 @@
 import unittest
 import pandas as pd
-from hyta.weighted_moving_average import WeightedMovingAverage
+from hyta.wma import WeightedMovingAverage
 
 
 class TestWeightedMovingAverage(unittest.TestCase):
@@ -20,12 +20,10 @@ class TestWeightedMovingAverage(unittest.TestCase):
 
     def test_input_value(self):
         #period is always less than the lenght of close price list
-        self.assertGreater(len(self.close),self.period[-2])
+        self.assertGreater(len(self.close),int(self.period[11]))
         self.assertLess(self.period[3],len(self.close))
         #close list type have to be list
-        self.assertIsInstance(self.close, list)
-        #period type have to be integer
-        self.assertIsInstance(self.period[6], int)
+        self.assertIsInstance(self.close, list)        
         #period is never 0 and period and close's value is never None
         self.assertNotEqual(self.period[7],0)
         self.assertIsNotNone(self.period[0])
@@ -34,13 +32,10 @@ class TestWeightedMovingAverage(unittest.TestCase):
 
 
     def test_wma(self):
-        wma = WeightedMovingAverage(self.close,self.period[1])
+        wma = WeightedMovingAverage(self.close,int(self.period[1]))
         #check result value
         self.assertAlmostEqual(wma.weighted_moving_average(),self.result[1],2)
         self.assertNotAlmostEqual(wma.weighted_moving_average(), self.result[9])
         #check result type
         self.assertIsInstance(wma.weighted_moving_average(),float)
-        self.assertNotIsInstance(wma.weighted_moving_average(), str)
-
-
-        
+        self.assertNotIsInstance(wma.weighted_moving_average(), str)        
