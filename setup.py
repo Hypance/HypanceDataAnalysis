@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name='hyta',
-    version='0.0.3',
+    version='0.0.4',
     author='Toygar Aksoy',
     author_email='toygar.aksoy@gmail.com',
     description='Indicators for Hypance Project',
