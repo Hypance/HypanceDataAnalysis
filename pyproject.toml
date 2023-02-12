@@ -10,6 +10,7 @@ name = "HyTA"
 version = "0.1.0"
 authors = [
     {name = "Toygar Aksoy", email = "toygar.aksoy@gmail.com"},
+    {name = "Ugur Aydin", email = "uguraydin7541@gmmail.com"},
     ]
 description = "Indicators for Hypance Project"
 readme = "README.md"
