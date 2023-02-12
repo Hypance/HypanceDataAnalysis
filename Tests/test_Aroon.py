@@ -1,5 +1,5 @@
 import pandas as pd
-from aroon import Aroon
+from hyta.aroon import Aroon
 import unittest
 
 class TestAroon(unittest.TestCase):
