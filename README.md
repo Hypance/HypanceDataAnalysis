@@ -14,45 +14,24 @@ The current version of "hyta" includes a comprehensive set of indicators. Howeve
 
 - Accumulation/Distribution (ADL)
 - Aroon
-- Average Directional Index (ADX)
-- Average True Range (ATR)
-- Awesome Oscillator (AO)
-- Balance of Power (BOP)
-- Bollinger Bands (BB)
-- Chaikin Oscillator
-- Chande Kroll Stop
-- Choppiness Index (CHOP)
-- Coppock Curve
-- Commodity Channel Index (CCI)
-- Donchian Channel (DC)
-- Detrended Price Oscillator (DPO)
-- Ease of Movement (EMV)
-- Force Index
+- [Average Directional Index (ADX)](https://github.com/Hypance/HypanceDataAnalysis/blob/main/hyta/adx.py)
+- [Average True Range (ATR)](https://github.com/Hypance/HypanceDataAnalysis/blob/main/hyta/atr.py)
+- [Bollinger Bands (BB)](https://github.com/Hypance/HypanceDataAnalysis/blob/main/hyta/bollinger.py)
+- [Chaikin Money Flow (CMF)](https://github.com/Hypance/HypanceDataAnalysis/blob/main/hyta/cmf.py)
+- [Chande Momentum Osilatörü (CMO)](https://github.com/Hypance/HypanceDataAnalysis/blob/main/hyta/cmo.py)
+- [Detrended Price Oscillator (DPO)](https://github.com/Hypance/HypanceDataAnalysis/blob/main/hyta/dpo.py)
 - Ichimoku Kinko Hyo
-- Keltner Channel (KC)
-- Klinger Volume Oscillator (KVO)
-- Know Sure Thing (KST)
-- Mass Index
-- McGinley Dynamic
-- Mean Deviation
-- Moving Average (ALMA, SMA, SMMA, DEMA, EMA, HMA, KAMA, TEMA, VWMA, WMA)
-- Moving Average Convergence Divergence (MACD)
-- On-balance Volume (OBV), Smoothed On-balance Volume (SOBV)
-- Parabolic SAR
-- Pivots High/Low
+- [Moving Average](https://github.com/Hypance/HypanceDataAnalysis/blob/main/hyta/movingaverage.py)
+- [Moving Average Convergence Divergence (MACD)](https://github.com/Hypance/HypanceDataAnalysis/blob/main/hyta/macd.py)
+- On-balance Volume (OBV)
+- [ParabolicSAR (PSAR)](https://github.com/Hypance/HypanceDataAnalysis/blob/main/hyta/psar.py)
 - Rate of Change (ROC)
-- Relative strength index (RSI)
-- SFX TOR
-- Standard Deviation
-- Stochastic Oscillator
-- Stochastic RSI
-- SuperTrend
-- TRIX
-- TTM Squeeze
-- True Strength Index (TSI)
-- Ultimate Oscillator (UO)
-- Vortex Indicator (VTX)
-- Volume Weighted Average Price (VWAP)
+- [Relative Strength Index (RSI)](https://github.com/Hypance/HypanceDataAnalysis/blob/main/hyta/rsi.py)
+- [Stochastic Oscillator](https://github.com/Hypance/HypanceDataAnalysis/blob/main/hyta/Stochastic_Oscillator.py)
+- [Triangular Moving Average (TMA)](https://github.com/Hypance/HypanceDataAnalysis/blob/main/hyta/tma.py)
+- [True Strength Index (TSI)](https://github.com/Hypance/HypanceDataAnalysis/blob/main/hyta/tsi.py)
+- [WilliamsR](https://github.com/Hypance/HypanceDataAnalysis/blob/main/hyta/williams_r.py)
+
 
 ### Installation
 ```bash
