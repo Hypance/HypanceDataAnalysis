@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 
 class PPO:
-    def __init__(self,close,ppo_data):
+    def __init__(self,close):
         self.close = close
         self.ppo_data = pd.DataFrame({"Close":self.close})
 
