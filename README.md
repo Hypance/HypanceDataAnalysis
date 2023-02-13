@@ -2,6 +2,8 @@
 
 ![](https://img.shields.io/badge/python-3.6-blue.svg) ![](https://img.shields.io/badge/python-3.7-blue.svg) ![](https://img.shields.io/badge/python-3.8-blue.svg) ![](https://img.shields.io/badge/python-3.9-blue.svg) ![](https://img.shields.io/badge/pypy-3-blue.svg) ![unit tests](https://github.com/nardew/talipp/workflows/unit%20tests/badge.svg)
 
+![](https://avatars.githubusercontent.com/u/113800422?s=200&v=4)
+
 "Hyta" is a novel Python library that provides financial indicators for technical analysis, with a noteworthy emphasis on incremental computation. The library's incremental computation feature makes it particularly suitable for real-time applications or any other application that involves iterative input.
 
 As a relatively new project, "hyta" is highly receptive to user feedback and suggestions for improving its API to meet users' unique needs.
