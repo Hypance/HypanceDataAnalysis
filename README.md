@@ -23,7 +23,7 @@
     .
     <a href="/docs/readme_np.md">नेपाली</a>
     .
-    <a href="/docs/readme_tr.md"><img scr = "https://commons.wikimedia.org/wiki/File:Flag_of_Turkey.svg" /></a>
+    <a href="/docs/readme_tr.md">Türkçe</a>
   </p>
 
 ![](https://avatars.githubusercontent.com/u/113800422?s=200&v=4)
