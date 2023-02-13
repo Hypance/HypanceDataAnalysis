@@ -3,27 +3,27 @@
 ![](https://img.shields.io/badge/python-3.6-blue.svg) ![](https://img.shields.io/badge/python-3.7-blue.svg) ![](https://img.shields.io/badge/python-3.8-blue.svg) ![](https://img.shields.io/badge/python-3.9-blue.svg) ![](https://img.shields.io/badge/pypy-3-blue.svg) ![unit tests](https://github.com/nardew/talipp/workflows/unit%20tests/badge.svg)
 
 <p align="center">
-    <a href="/docs/readme_fr.md">Français </a>
+    <a href="/readme_docs/readme_fr.md">Français </a>
     ·
-    <a href="/docs/readme_cn.md">简体中文</a>
+    <a href="/readme_docs/readme_cn.md">简体中文</a>
     ·
-    <a href="/docs/readme_es.md">Español</a>
+    <a href="/readme_docs/readme_es.md">Español</a>
     ·
-    <a href="/docs/readme_de.md">Deutsch</a>
+    <a href="/readme_docs/readme_de.md">Deutsch</a>
     ·
-    <a href="/docs/readme_ja.md">日本語</a>
+    <a href="/readme_docs/readme_ja.md">日本語</a>
     ·
-    <a href="/docs/readme_pt-BR.md">Português Brasileiro</a>
+    <a href="/readme_docs/readme_pt-BR.md">Português Brasileiro</a>
     ·
-    <a href="/docs/readme_it.md">Italiano</a>
+    <a href="/readme_docs/readme_it.md">Italiano</a>
     ·
-    <a href="/docs/readme_kr.md">한국어</a>
+    <a href="/readme_docs/readme_kr.md">한국어</a>
     .
-    <a href="/docs/readme_nl.md">Nederlands</a>
+    <a href="/readme_docs/readme_nl.md">Nederlands</a>
     .
-    <a href="/docs/readme_np.md">नेपाली</a>
+    <a href="/readme_docs/readme_np.md">नेपाली</a>
     .
-    <a href="/docs/readme_tr.md">Türkçe</a>
+    <a href="/readme_docs/readme_tr.md">Türkçe</a>
   </p>
 
 ![](https://avatars.githubusercontent.com/u/113800422?s=200&v=4)
