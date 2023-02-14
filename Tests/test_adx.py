@@ -6,7 +6,7 @@ class TestAdx(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.data = pd.read_excel('files/cs-adx.xlsx')
+        cls.data = pd.read_excel('Tests/files/cs-adx.xlsx')
 
     @classmethod
     def tearDownClass(cls):
@@ -16,8 +16,7 @@ class TestAdx(unittest.TestCase):
         self.close = self.data["Close"]
         self.low = self.data["Low"]
         self.high = self.data["High"]
-        self.volume = self.data["Volume"]
-        self.adx_data = ADX(self.close,self.low,self.high,self.volume)
+        self.adx_data = ADX(self.close,self.low,self.high)
 
     def test_adx(self):
         self.adx_result = self.adx_data.adx()
