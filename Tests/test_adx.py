@@ -2,7 +2,7 @@ import unittest
 from hyta.adx import ADX 
 import pandas as pd
 
-class TestCmf(unittest.TestCase):
+class TestAdx(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
