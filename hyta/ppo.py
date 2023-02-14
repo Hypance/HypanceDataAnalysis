@@ -5,7 +5,7 @@ class PPO:
         self.close = close
         self.ppo_data = pd.DataFrame({"Close":self.close})
 
-    def ema_12(self) -> pd.DataFrame:
+    def ema_12(self) -> pd.Series:
         weight_p_12 = round(2/(12+1),ndigits=6)
        
         first = self.ppo_data["Close"][0]
@@ -17,9 +17,9 @@ class PPO:
         for i in range(1,len(self.ppo_data["Close"])):
             ema_12_ilk = (self.ppo_data["Close"][i] * weight_p_12) + (self.ppo_data["Ema_12"][i-1] * (1-weight_p_12))
             self.ppo_data["Ema_12"][i:] = ema_12_ilk
-        return pd.DataFrame(self.ppo_data["Ema_12"])
+        return pd.Series(self.ppo_data["Ema_12"])
 
-    def ema_26(self) -> pd.DataFrame:
+    def ema_26(self) -> pd.Series:
         weight_p_26 = round(2/(26+1),ndigits=6)
        
         first = self.ppo_data["Close"][0]
@@ -31,10 +31,10 @@ class PPO:
         for i in range(1,len(self.ppo_data["Close"])):
             ema_26_ilk = (self.ppo_data["Close"][i] * weight_p_26) + (self.ppo_data["Ema_26"][i-1] * (1-weight_p_26))
             self.ppo_data["Ema_26"][i:] = ema_26_ilk
-        return pd.DataFrame(self.ppo_data["Ema_26"])
+        return pd.Series(self.ppo_data["Ema_26"])
     
-    def ppo(self) -> pd.DataFrame:
+    def ppo(self) -> pd.Series:
         self.ema_12()
         self.ema_26()
         self.ppo_data["PPO"] = (self.ppo_data["Ema_12"] - self.ppo_data["Ema_26"]) / self.ppo_data["Ema_12"]
-        return pd.DataFrame(self.ppo_data["PPO"])
+        return pd.Series(self.ppo_data["PPO"])
