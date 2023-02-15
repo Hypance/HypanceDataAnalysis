@@ -1,6 +1,4 @@
 import pandas as pd
-import matplotlib.pyplot as plt
-import numpy as np
 
 class Bollinger:
     '''
@@ -22,9 +20,4 @@ class Bollinger:
         df["Upper"] = df["SMA"] + 2 * df["stddev"]
         df["Lower"] = df["SMA"] - 2 * df["stddev"]
         
-        return df["Close"],df["Upper"],df["Close"]
-
-
-
-
-
+        return df["Upper"],df["Lower"]
