@@ -36,5 +36,5 @@ class PPO:
     def ppo(self) -> pd.Series:
         self.ema_12()
         self.ema_26()
-        self.ppo_data["PPO"] = (self.ppo_data["Ema_12"] - self.ppo_data["Ema_26"]) / self.ppo_data["Ema_12"]
+        self.ppo_data["PPO"] = ((self.ppo_data["Ema_12"] - self.ppo_data["Ema_26"]) / self.ppo_data["Ema_12"])*100
         return pd.Series(self.ppo_data["PPO"])
