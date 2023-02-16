@@ -1,20 +1,23 @@
+import pandas as pd
 import numpy as np
 from hyta.dx import DX
 
 class ADX:
-    def __init__(self,high,low,close):
-        self.high = high
-        self.low = low
-        self.close = close
+    def __init__(self, high, low, close, period=14):
+        self.data = pd.DataFrame({'high': high, 'low': low, 'close': close})
+        self.period = period
 
     def adx(self):
-        dx_data1 = DX(high=self.high,low=self.low,close=self.close)
-        dx_data = dx_data1.dx()
-        dx_mean = dx_data[14:27].mean()
-        
-        adx_data = [np.nan,dx_mean]
-        for i in range(27,len(dx_data)):
-            adx_result = ((adx_data[-1] * 13)+ dx_data[i])/14
-            adx_data.append(adx_result)
-    
-        return adx_data
+        dx_data = DX(self.data['high'], self.data['low'], self.data['close']).dx()
+        dx_mean = dx_data[self.period:(self.period+13)].mean()
+
+        self.data["ADX"] = pd.Series()
+        self.data["ADX"][:28] = np.nan
+        self.data["ADX"][27] = dx_mean
+        other_value = [] #[20.962067510311922, 20.346152346281688, 20.388817062503286]
+        for i in range(28, len(dx_data)+1):
+            adx_result = ((self.data["ADX"][i-1] * (self.period - 1)) + dx_data[i-1]) / self.period
+            other_value.append(adx_result)
+            self.data["ADX"][28:] = adx_result
+
+        return self.data["ADX"]
