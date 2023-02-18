@@ -22,8 +22,8 @@ class CCI:
 #Mean_Deviation as MAD. It is calculated through TP.
   def MAD(self,tp:pd.Series)-> pd.Series:
     df = pd.DataFrame()
-        df['TP'] = tp.values
-        df['MAD'] = df['TP'].rolling(20).apply(lambda x: np.median(np.absolute(x - np.median(x))))
+    df['TP'] = tp.values
+    df['MAD'] = df['TP'].rolling(20).apply(lambda x: np.median(np.absolute(x - np.median(x))))
     return df['MAD']
   
 #Commodity_Channel_Index as CCI
