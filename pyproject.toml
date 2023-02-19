@@ -13,7 +13,7 @@ authors = [
     {name = "Ugur Aydin", email = "uguraydin7541@gmail.com"},
     {name = "Bahar Karakaya", email = "baharkrky00@gmail.com"},
     {name = "Esra Ovalı", email = "esra.ovali@gmail.com"},
-    {name = "Hasan Huseyin Boyaci" = "boyacihasanhuseyin@gmail.com},]
+    {name = "Hasan Huseyin Boyaci" = "boyacihasanhuseyin@gmail.com"},]
 description = "Indicators for Hypance Project"
 readme = "README.md"
 requires-python = ">=3.9"
