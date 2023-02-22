@@ -45,7 +45,7 @@ class TestCCI(unittest.TestCase):
         self.assertLess(self.cci.MAD(tp)[28], 1)
 
     def test_CCI(self):
-        self.assertAlmostEqual(self.cci.CCI()[24], self.data["CCI"][24])
+        self.assertAlmostEqual(self.cci.CCI()[24], self.data["CCI"][24], places=7)
         self.assertGreater(self.cci.CCI()[25], -1)
         self.assertLess(self.cci.CCI()[29], 1)
 
