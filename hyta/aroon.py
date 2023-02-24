@@ -14,7 +14,7 @@ class Aroon():
         This method finds the highest data in the period and calculates how many periods
         are there after that the highest data.
         """
-        df = self.df.rolling(self.period + 1).apply(lambda x: x.argmax())
+        df = self.df["Adj Close"].rolling(self.period+1).apply(lambda x: x.argmax(), raw=True)
         return (self.period - df + 1).squeeze()
 
     def __low_finder(self)-> pd.Series:
@@ -22,7 +22,7 @@ class Aroon():
         This method finds the lowest data in the period and calculates how many periods
         are there after that the lowest data.
         """
-        df = self.df.rolling(self.period + 1).apply(lambda x: x.argmin())
+        df = self.df["Adj Close"].rolling(self.period+1).apply(lambda x: x.argmin(), raw=True)
         return (self.period - df + 1).squeeze()
 
     def aroon_up(self) -> pd.Series:
