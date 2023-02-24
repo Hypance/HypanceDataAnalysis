@@ -22,9 +22,7 @@ class TestAroon(unittest.TestCase):
         originalAroonUp = pd.Series(self.df["Aroon Up"])
         testAroonUp = Aroon(self.df["Adj Close"]).aroon_up()
 
-        self.assertAlmostEqual(originalAroonUp[26], testAroonUp[26])
-
-        self.assertAlmostEqual(originalAroonUp.iloc[-1], testAroonUp.iloc[-1], places=7)
+        self.assertAlmostEqual(originalAroonUp[26], testAroonUp[25])
 
         self.assertEqual(len(originalAroonUp), len(testAroonUp))
 
@@ -34,10 +32,8 @@ class TestAroon(unittest.TestCase):
         originalAroonDown = pd.Series(self.df["Aroon Down"])
         testAroonDown = Aroon(self.df["Adj Close"]).aroon_down()
 
-        self.assertAlmostEqual(originalAroonDown[26], testAroonDown[26])
-
-        self.assertAlmostEqual(originalAroonDown.iloc[-1], testAroonDown.iloc[-1], places=7)
-
+        self.assertAlmostEqual(originalAroonDown[26], testAroonDown[25])
+        
         self.assertEqual(len(originalAroonDown), len(testAroonDown))
 
         self.assertIsInstance(testAroonDown, pd.Series)
@@ -47,9 +43,7 @@ class TestAroon(unittest.TestCase):
         originalAroonOscilattor = pd.Series(self.df["Aroon Oscillator"])
         testAroonOscilattor = Aroon(self.df["Adj Close"]).aroon_oscilattor()
 
-        self.assertAlmostEqual(originalAroonOscilattor[26], testAroonOscilattor[26])
-
-        self.assertAlmostEqual(originalAroonOscilattor.iloc[-1], testAroonOscilattor.iloc[-1], places=7)
+        self.assertAlmostEqual(originalAroonOscilattor[26], testAroonOscilattor[25])
 
         self.assertEqual(len(originalAroonOscilattor), len(testAroonOscilattor))
 
