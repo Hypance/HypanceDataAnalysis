@@ -31,7 +31,7 @@ class TestRSI(unittest.TestCase):
         originalLOSS = pd.Series(self.df["Avg. Loss"])
         testLOSS = RSI(self.df["Close"]).loss_calculator()
 
-        self.assertAlmostEqual(originalLOSS[15], testLOSS[15])
+        self.assertAlmostEqual(originalLOSS[14], testLOSS[13])
 
         self.assertAlmostEqual(originalLOSS.iloc[-1], testLOSS.iloc[-1], places=7)
 
@@ -43,7 +43,7 @@ class TestRSI(unittest.TestCase):
         originalRsi = pd.Series(self.df["RSI"])
         testRsi = RSI(self.df["Close"]).rsi()
 
-        self.assertAlmostEqual(originalRsi[15], testRsi[15])
+        self.assertAlmostEqual(originalRsi[14], testRsi[13])
 
         self.assertAlmostEqual(originalRsi.iloc[-1], testRsi.iloc[-1], places=7)
 
