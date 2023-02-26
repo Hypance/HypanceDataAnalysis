@@ -20,18 +20,15 @@ class RSI:
            and previous closes when the current closes are less than previous closes.
            Then diveded to 14.
         """
-        gain_list = []
         close = self.close
-        for i in range(0, len(close)-1):
-            if close[i+1] > close[i]:
-                gain = round(close[i+1] - close[i],2)
-                gain_list.append(gain)
-            else:
-                gain_list.append(0)
-        gain_list = pd.Series(gain_list)
-        gain_list = gain_list.rolling(self.period).sum()
+        gain_list = pd.Series(0.0, index=close.index)
+        for i in range(1, len(close)):
+            if close[i] > close[i - 1]:
+                gain = close[i] - close[i - 1]
+                gain_list[i] = gain
+        gain_avg = gain_list.rolling(window=self.period).mean()
 
-        return gain_list / 14
+        return gain_avg
 
 
     def loss_calculator(self) -> pd.Series:
@@ -42,17 +39,15 @@ class RSI:
            and previous closes when the current closes are greater than previous closes.
            Then diveded to 14.
         """
-        loss_list = []
         close = self.close
-        for i in range(0, len(close) - 1):
-            if close[i] > close[i + 1]:
-                loss = round(close[i] - close[i + 1], 2)
-                loss_list.append(loss)
-            else:
-                loss_list.append(0)
-        loss_list = pd.Series(loss_list)
-        loss_list = loss_list.rolling(self.period).sum()
-        return loss_list / 14
+        loss_list = pd.Series(0.0, index=close.index)
+        for i in range(1, len(close)):
+            if close[i] < close[i - 1]:
+                loss = close[i - 1] - close[i]
+                loss_list[i] = loss
+        loss_avg = loss_list.rolling(window=self.period).mean()
+
+        return loss_avg
 
     def rsi(self) -> pd.Series:
         """
@@ -60,6 +55,9 @@ class RSI:
             and rsi by using 100-(100/(1+rs)).
             Returns a pandas series.
         """
-        rs = self.gain_calculator()/self.loss_calculator()
+        gain = self.gain_calculator()
+        loss =self.loss_calculator()
+        rs = gain/loss
+        rs[rs== float('inf')] = 0
         rsi = 100 - (100/(1+rs))
         return rsi
