@@ -24,7 +24,9 @@ class CCI:
     def MAD(self, tp: pd.Series) -> pd.Series:
         df = pd.DataFrame()
         df["TP"] = tp.values
-        df["MAD"] = (df["TP"].rolling(20).apply(lambda x: np.mean(np.absolute(x - np.mean(x)))))
+        df["MAD"] = (
+            df["TP"].rolling(20).apply(lambda x: np.mean(np.absolute(x - np.mean(x))))
+        )
         return df["MAD"]
 
     # Commodity_Channel_Index as CCI
