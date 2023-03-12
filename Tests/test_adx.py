@@ -16,8 +16,8 @@ class TestAdx(unittest.TestCase):
         self.close = self.data["Close"]
         self.low = self.data["Low"]
         self.high = self.data["High"]
-        self.adx_data = ADX(self.close,self.low,self.high)
+        self.adx_data = ADX(self.high,self.low,self.close,14)
 
     def test_adx(self):
         self.adx_result = self.adx_data.adx()
-        self.assertAlmostEqual(self.adx_result[-1],self.data["ADX"].iloc[-1])
+        self.assertAlmostEqual(self.adx_result,self.data["ADX"].iloc[-1])

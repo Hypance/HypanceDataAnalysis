@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-from dx import DX
+from hyta.dx import DX
 
 class ADX:
     def __init__(self, high, low, close, period=14):
