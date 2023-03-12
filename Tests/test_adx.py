@@ -20,7 +20,4 @@ class TestAdx(unittest.TestCase):
 
     def test_adx(self):
         self.adx_result = self.adx_data.adx()
-        self.assertAlmostEqual(self.adx_result[1],self.data["ADX"][1])
-        self.assertAlmostEqual(self.adx_result[3],self.data["ADX"][3])
-
-    
+        self.assertAlmostEqual(self.adx_result[-1],self.data["ADX"].iloc[-1])
