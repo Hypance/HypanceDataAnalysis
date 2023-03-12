@@ -21,3 +21,4 @@ class TestAdx(unittest.TestCase):
     def test_adx(self):
         self.adx_result = self.adx_data.adx()
         self.assertAlmostEqual(self.adx_result,self.data["ADX"].iloc[-1])
+        # TODO: new tests should be added.
