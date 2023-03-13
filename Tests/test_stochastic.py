@@ -36,7 +36,7 @@ class TestStochasticOscillator(unittest.TestCase):
 
     def test_slow_stochastic(self):
         self.assertAlmostEqual(
-            self.so.slow_stochastic()[9], self.data["slow_stochastic"][9]
+            self.so.slow_stochastic()[8], self.data["slow_stochastic"][8]
         )
         self.assertGreater(self.so.slow_stochastic()[15], -1)
         self.assertLess(self.so.slow_stochastic()[37], 99)
