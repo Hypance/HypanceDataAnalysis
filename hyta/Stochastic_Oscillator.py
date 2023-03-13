@@ -1,5 +1,6 @@
 
 import pandas as pd
+import numpy as np
 
 class StochasticOscillator:
     def __init__(self, high, low, close, periods: int = 5):
@@ -31,7 +32,7 @@ class StochasticOscillator:
 
     # Slow stochastic indicator
     def slow_stochastic(self):
-        return self.df["%K"].rolling(3).mean()
+        return self.df["%K"].rolling(3).apply(lambda x:np.mean(x))
 
     def stochasticoscillator(self):
         self.fast_stochastic()
