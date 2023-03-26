@@ -1,4 +1,6 @@
 import pandas as pd
+
+
 class RSI:
     """
     This class calculates RSI for period = 14.
@@ -7,6 +9,7 @@ class RSI:
     close : pandas
     period : int
     """
+    
     def __init__(self, close, period: int = 14) -> None:
         self.close = close
         self.period = period
@@ -17,7 +20,8 @@ class RSI:
            From period, returns a pandas series
            by using gain_calculator function.
            Sum of the difference between the current closes
-           and previous closes when the current closes are less than previous closes.
+           and previous closes when the current closes 
+           are less than previous closes.
            Then diveded to 14.
         """
         close = self.close
@@ -36,7 +40,8 @@ class RSI:
            From period, returns a pandas series
            by using loss_calculator function.
            Sum of the difference between the current closes
-           and previous closes when the current closes are greater than previous closes.
+           and previous closes when the current closes 
+           are greater than previous closes.
            Then diveded to 14.
         """
         close = self.close
