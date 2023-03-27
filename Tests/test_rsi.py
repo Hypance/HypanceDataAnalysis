@@ -8,6 +8,7 @@ class TestRSI(unittest.TestCase):
         Returns the same length data comparing to original data
         Returning list is same type as we want(pandas series)
         '''
+      
     @classmethod
     def setUpClass(cls) -> None:
          cls.df = pd.read_excel("Tests/files/RSI.xlsx")
@@ -16,40 +17,40 @@ class TestRSI(unittest.TestCase):
          del cls.df
 
     def test_gain_calculator(self):
-        originalGAIN = pd.Series(self.df["Avg. Gain"])
-        testGAIN = RSI(self.df["Close"]).gain_calculator()
+        original_gain = pd.Series(self.df["Avg. Gain"])
+        test_gain = RSI(self.df["Close"]).gain_calculator()
 
-        self.assertAlmostEqual(originalGAIN[14], testGAIN[13])
+        self.assertAlmostEqual(original_gain[14], test_gain[13])
 
-        self.assertAlmostEqual(originalGAIN.iloc[-1], testGAIN.iloc[-1], places=7)
+        self.assertAlmostEqual(original_gain.iloc[-1], test_gain.iloc[-1], places=7)
 
-        self.assertEqual(len(originalGAIN), len(testGAIN))
+        self.assertEqual(len(original_gain), len(test_gain))
 
-        self.assertIsInstance(testGAIN, pd.Series)
+        self.assertIsInstance(test_gain, pd.Series)
 
     def test_loss_calculator(self):
-        originalLOSS = pd.Series(self.df["Avg. Loss"])
-        testLOSS = RSI(self.df["Close"]).loss_calculator()
+        original_loss = pd.Series(self.df["Avg. Loss"])
+        test_loss = RSI(self.df["Close"]).loss_calculator()
 
-        self.assertAlmostEqual(originalLOSS[14], testLOSS[13])
+        self.assertAlmostEqual(original_loss[14], test_loss[13])
 
-        self.assertAlmostEqual(originalLOSS.iloc[-1], testLOSS.iloc[-1], places=7)
+        self.assertAlmostEqual(original_loss.iloc[-1], test_loss.iloc[-1], places=7)
 
-        self.assertEqual(len(originalLOSS), len(testLOSS))
+        self.assertEqual(len(original_loss), len(test_loss))
 
-        self.assertIsInstance(testLOSS, pd.Series)
+        self.assertIsInstance(test_loss, pd.Series)
 
     def test_rsi(self):
-        originalRsi = pd.Series(self.df["RSI"])
-        testRsi = RSI(self.df["Close"]).rsi()
+        original_rsi = pd.Series(self.df["RSI"])
+        test_rsi = RSI(self.df["Close"]).rsi()
 
-        self.assertAlmostEqual(originalRsi[14], testRsi[13])
+        self.assertAlmostEqual(original_rsi[14], test_rsi[13])
 
-        self.assertAlmostEqual(originalRsi.iloc[-1], testRsi.iloc[-1], places=7)
+        self.assertAlmostEqual(original_rsi.iloc[-1], test_rsi.iloc[-1], places=7)
 
-        self.assertEqual(len(originalRsi), len(testRsi))
+        self.assertEqual(len(original_rsi), len(test_rsi))
 
-        self.assertIsInstance(testRsi, pd.Series)
-
+        self.assertIsInstance(test_rsi, pd.Series)
+        
     if __name__ == "_main_":
         unittest.main()
