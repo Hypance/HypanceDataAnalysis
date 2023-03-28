@@ -3,7 +3,7 @@
 </div>
 
 -----------------
-# HyTa - Technical Analysis Library 0.1.0
+# HyTa - 技术分析库
 
 ![](https://img.shields.io/badge/python-3.8-blue.svg) ![](https://img.shields.io/badge/python-3.9-blue.svg) ![](https://img.shields.io/badge/python-3.10-blue.svg) ![](https://img.shields.io/badge/python-3.11-blue.svg) ![](https://img.shields.io/badge/pypy-3-blue.svg) ![unit tests](https://github.com/Hypance/HypanceDataAnalysis/blob/read.me/readme_docs/unittest.svg) 
 
@@ -35,15 +35,15 @@
 
 -----------------
 
-"Hyta" is a novel Python library that provides financial indicators for technical analysis, with a noteworthy emphasis on incremental computation. The library's incremental computation feature makes it particularly suitable for real-time applications or any other application that involves iterative input.
+"Hyta "是一个新颖的Python库，提供技术分析的金融指标，值得注意的是强调增量计算。该库的增量计算功能使其特别适用于实时应用或任何其他涉及迭代输入的应用。
 
-As a relatively new project, "hyta" is highly receptive to user feedback and suggestions for improving its API to meet users' unique needs.
+作为一个相对较新的项目，"hyta "非常乐于接受用户的反馈和建议，以改进其API，满足用户的独特需求。
 
 ---
 
-### List of indicators
+### 指标清单
 
-The current version of "hyta" includes a comprehensive set of indicators. However, if your preferred indicator is not included, you can create a ticket through GitHub Issues, and there is a high likelihood that it will be incorporated into a future version of the library.
+当前版本的 "hyta "包括一套全面的指标。然而，如果你喜欢的指标没有包括在内，你可以通过GitHub问题创建一个票据，它很有可能会被纳入库的未来版本。
 
 - Accumulation/Distribution (ADL)
 - Aroon
@@ -66,11 +66,11 @@ The current version of "hyta" includes a comprehensive set of indicators. Howeve
 - [WilliamsR](https://github.com/Hypance/HypanceDataAnalysis/blob/main/hyta/williams_r.py)
 
 
-### Installation
+### 安装
 ```bash
 pip install hyta
 ```
 
-### Contact
+### 联系我们
 
-- For the most efficient means of reporting issues, bugs, or corrections, as well as proposing new features, we highly suggest utilizing GitHub Issues.
+- 为了以最有效的方式报告问题、错误或更正，以及提出新的功能，我们强烈建议使用GitHub Issues。

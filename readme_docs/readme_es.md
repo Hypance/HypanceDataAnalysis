@@ -3,7 +3,7 @@
 </div>
 
 -----------------
-# HyTa - Technical Analysis Library 0.1.0
+# HyTa - Biblioteca de análisis técnico
 
 ![](https://img.shields.io/badge/python-3.8-blue.svg) ![](https://img.shields.io/badge/python-3.9-blue.svg) ![](https://img.shields.io/badge/python-3.10-blue.svg) ![](https://img.shields.io/badge/python-3.11-blue.svg) ![](https://img.shields.io/badge/pypy-3-blue.svg) ![unit tests](https://github.com/Hypance/HypanceDataAnalysis/blob/read.me/readme_docs/unittest.svg) 
 
@@ -35,15 +35,15 @@
 
 -----------------
 
-"Hyta" is a novel Python library that provides financial indicators for technical analysis, with a noteworthy emphasis on incremental computation. The library's incremental computation feature makes it particularly suitable for real-time applications or any other application that involves iterative input.
+"Hyta" es una novedosa biblioteca de Python que proporciona indicadores financieros para el análisis técnico, con un notable énfasis en el cálculo incremental. La función de cálculo incremental de la biblioteca la hace especialmente adecuada para aplicaciones en tiempo real o cualquier otra aplicación que implique una entrada iterativa.
 
-As a relatively new project, "hyta" is highly receptive to user feedback and suggestions for improving its API to meet users' unique needs.
+Como proyecto relativamente nuevo, "hyta" es muy receptivo a los comentarios y sugerencias de los usuarios para mejorar su API y satisfacer sus necesidades específicas.
 
 ---
 
-### List of indicators
+### Lista de indicadores
 
-The current version of "hyta" includes a comprehensive set of indicators. However, if your preferred indicator is not included, you can create a ticket through GitHub Issues, and there is a high likelihood that it will be incorporated into a future version of the library.
+La versión actual de "hyta" incluye un amplio conjunto de indicadores. Sin embargo, si su indicador preferido no está incluido, puede crear un ticket a través de GitHub Issues, y es muy probable que se incorpore en una versión futura de la biblioteca.
 
 - Accumulation/Distribution (ADL)
 - Aroon
@@ -66,11 +66,11 @@ The current version of "hyta" includes a comprehensive set of indicators. Howeve
 - [WilliamsR](https://github.com/Hypance/HypanceDataAnalysis/blob/main/hyta/williams_r.py)
 
 
-### Installation
+### Instalación
 ```bash
 pip install hyta
 ```
 
-### Contact
+### Contacto
 
-- For the most efficient means of reporting issues, bugs, or corrections, as well as proposing new features, we highly suggest utilizing GitHub Issues.
+- Para notificar problemas, errores o correcciones de la forma más eficaz, así como para proponer nuevas funciones, le recomendamos encarecidamente que utilice GitHub Issues.

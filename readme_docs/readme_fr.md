@@ -3,7 +3,7 @@
 </div>
 
 -----------------
-# HyTa - Technical Analysis Library 0.1.0
+# HyTa - Bibliothèque d'analyse technique
 
 ![](https://img.shields.io/badge/python-3.8-blue.svg) ![](https://img.shields.io/badge/python-3.9-blue.svg) ![](https://img.shields.io/badge/python-3.10-blue.svg) ![](https://img.shields.io/badge/python-3.11-blue.svg) ![](https://img.shields.io/badge/pypy-3-blue.svg) ![unit tests](https://github.com/Hypance/HypanceDataAnalysis/blob/read.me/readme_docs/unittest.svg) 
 
@@ -35,15 +35,15 @@
 
 -----------------
 
-"Hyta" is a novel Python library that provides financial indicators for technical analysis, with a noteworthy emphasis on incremental computation. The library's incremental computation feature makes it particularly suitable for real-time applications or any other application that involves iterative input.
+"Hyta" est une nouvelle bibliothèque Python qui fournit des indicateurs financiers pour l'analyse technique, avec un accent particulier sur le calcul incrémental. La fonction de calcul incrémental de la bibliothèque la rend particulièrement adaptée aux applications en temps réel ou à toute autre application impliquant une saisie itérative.
 
-As a relatively new project, "hyta" is highly receptive to user feedback and suggestions for improving its API to meet users' unique needs.
+En tant que projet relativement nouveau, "hyta" est très réceptif aux commentaires des utilisateurs et aux suggestions pour améliorer son API afin de répondre aux besoins uniques des utilisateurs.
 
 ---
 
-### List of indicators
+### Liste des indicateurs
 
-The current version of "hyta" includes a comprehensive set of indicators. However, if your preferred indicator is not included, you can create a ticket through GitHub Issues, and there is a high likelihood that it will be incorporated into a future version of the library.
+La version actuelle de "hyta" comprend un ensemble complet d'indicateurs. Cependant, si votre indicateur préféré n'est pas inclus, vous pouvez créer un ticket via GitHub Issues, et il y a de fortes chances qu'il soit incorporé dans une future version de la bibliothèque.
 
 - Accumulation/Distribution (ADL)
 - Aroon
@@ -73,4 +73,4 @@ pip install hyta
 
 ### Contact
 
-- For the most efficient means of reporting issues, bugs, or corrections, as well as proposing new features, we highly suggest utilizing GitHub Issues.
+- Nous vous conseillons vivement d'utiliser GitHub Issues pour signaler les problèmes, les bogues ou les corrections, ainsi que pour proposer de nouvelles fonctionnalités, de la manière la plus efficace qui soit.
