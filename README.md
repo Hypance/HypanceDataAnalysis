@@ -1,6 +1,13 @@
+<div align="center">
+  <img src=https://avatars.githubusercontent.com/u/113800422?s=200&v=4"><br>
+</div>
+
+-----------------
 # HyTa - Technical Analysis Library 0.1.0
 
-![](https://img.shields.io/badge/python-3.6-blue.svg) ![](https://img.shields.io/badge/python-3.7-blue.svg) ![](https://img.shields.io/badge/python-3.8-blue.svg) ![](https://img.shields.io/badge/python-3.9-blue.svg) ![](https://img.shields.io/badge/pypy-3-blue.svg) ![unit tests](https://github.com/nardew/talipp/workflows/unit%20tests/badge.svg)
+![](https://img.shields.io/badge/python-3.8-blue.svg) ![](https://img.shields.io/badge/python-3.9-blue.svg) ![](https://img.shields.io/badge/python-3.10-blue.svg) ![](https://img.shields.io/badge/python-3.11-blue.svg) ![](https://img.shields.io/badge/pypy-3-blue.svg) ![unit tests](https://github.com/Hypance/HypanceDataAnalysis/blob/read.me/readme_docs/unittest.svg) 
+
+
 
 <p align="center">
     <a href="/readme_docs/readme_fr.md">Français </a>
@@ -26,7 +33,7 @@
     <a href="/readme_docs/readme_tr.md">Türkçe</a>
   </p>
 
-![](https://avatars.githubusercontent.com/u/113800422?s=200&v=4)
+-----------------
 
 "Hyta" is a novel Python library that provides financial indicators for technical analysis, with a noteworthy emphasis on incremental computation. The library's incremental computation feature makes it particularly suitable for real-time applications or any other application that involves iterative input.
 
