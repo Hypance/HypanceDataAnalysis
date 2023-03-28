@@ -3,7 +3,7 @@
 </div>
 
 -----------------
-# HyTa - Technical Analysis Library 0.1.0
+# HyTa - テクニカルアナリシスライブラリー
 
 ![](https://img.shields.io/badge/python-3.8-blue.svg) ![](https://img.shields.io/badge/python-3.9-blue.svg) ![](https://img.shields.io/badge/python-3.10-blue.svg) ![](https://img.shields.io/badge/python-3.11-blue.svg) ![](https://img.shields.io/badge/pypy-3-blue.svg) ![unit tests](https://github.com/Hypance/HypanceDataAnalysis/blob/read.me/readme_docs/unittest.svg) 
 
@@ -35,15 +35,15 @@
 
 -----------------
 
-"Hyta" is a novel Python library that provides financial indicators for technical analysis, with a noteworthy emphasis on incremental computation. The library's incremental computation feature makes it particularly suitable for real-time applications or any other application that involves iterative input.
+「Hytaは、テクニカル分析のための金融指標を提供する新しいPythonライブラリで、特にインクリメンタルな計算に重点を置いているのが特徴です。このライブラリは、インクリメンタルな計算を特徴とするため、リアルタイムアプリケーションや反復的な入力を伴う他のアプリケーションに特に適しています。
 
-As a relatively new project, "hyta" is highly receptive to user feedback and suggestions for improving its API to meet users' unique needs.
+比較的新しいプロジェクトである「hyta」は、ユーザーからのフィードバックや、ユーザー独自のニーズを満たすためにAPIを改善するための提案を強く受け入れています。
 
 ---
 
-### List of indicators
+### 指標一覧
 
-The current version of "hyta" includes a comprehensive set of indicators. However, if your preferred indicator is not included, you can create a ticket through GitHub Issues, and there is a high likelihood that it will be incorporated into a future version of the library.
+hyta」の現在のバージョンは、包括的な指標セットを含んでいます。しかし、好みの指標が含まれていない場合、GitHub Issuesからチケットを作成すれば、将来のバージョンのライブラリに組み込まれる可能性が高いです。
 
 - Accumulation/Distribution (ADL)
 - Aroon
@@ -66,11 +66,11 @@ The current version of "hyta" includes a comprehensive set of indicators. Howeve
 - [WilliamsR](https://github.com/Hypance/HypanceDataAnalysis/blob/main/hyta/williams_r.py)
 
 
-### Installation
+### インストール
 ```bash
 pip install hyta
 ```
 
-### Contact
+### お問い合わせ先
 
-- For the most efficient means of reporting issues, bugs, or corrections, as well as proposing new features, we highly suggest utilizing GitHub Issues.
+- 問題、バグ、修正の報告や新機能の提案を最も効率的に行うには、GitHub Issuesの活用を強くお勧めします。
