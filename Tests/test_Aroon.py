@@ -5,11 +5,11 @@ import unittest
 
 class TestAroon(unittest.TestCase):
     """
-        In this class, testing the following things:
-        Element values are equal and is in the same index.
-        Returns the same length data comparing to original data
-        Returning list is same type as we want(pandas series)
-        """
+    In this class, testing the following things:
+    Element values are equal and is in the same index.
+    Returns the same length data comparing to original data
+    Returning list is same type as we want(pandas series)
+    """
 
     @classmethod
     def setUpClass(cls) -> None:
@@ -39,7 +39,6 @@ class TestAroon(unittest.TestCase):
 
         self.assertIsInstance(test_aroon_down, pd.Series)
 
-
     def test_aroon_oscilattor(self):
         original_aroon_oscilattor = pd.Series(self.df["Aroon Oscillator"])
         test_aroon_oscilattor = Aroon(self.df["Adj Close"]).aroon_oscilattor()
@@ -51,4 +50,4 @@ class TestAroon(unittest.TestCase):
         self.assertIsInstance(test_aroon_oscilattor, pd.Series)
 
     if __name__ == "__main__":
-         unittest.main()
+        unittest.main()
