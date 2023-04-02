@@ -9,20 +9,19 @@ class RSI:
     close : pandas
     period : int
     """
-    
+
     def __init__(self, close, period: int = 14) -> None:
         self.close = close
         self.period = period
 
-
     def gain_calculator(self) -> pd.Series:
         """
-           From period, returns a pandas series
-           by using gain_calculator function.
-           Sum of the difference between the current closes
-           and previous closes when the current closes 
-           are less than previous closes.
-           Then diveded to 14.
+        From period, returns a pandas series
+        by using gain_calculator function.
+        Sum of the difference between the current closes
+        and previous closes when the current closes
+        are less than previous closes.
+        Then diveded to 14.
         """
         close = self.close
         gain_list = pd.Series(0.0, index=close.index)
@@ -34,15 +33,14 @@ class RSI:
 
         return gain_avg
 
-
     def loss_calculator(self) -> pd.Series:
         """
-           From period, returns a pandas series
-           by using loss_calculator function.
-           Sum of the difference between the current closes
-           and previous closes when the current closes 
-           are greater than previous closes.
-           Then diveded to 14.
+        From period, returns a pandas series
+        by using loss_calculator function.
+        Sum of the difference between the current closes
+        and previous closes when the current closes
+        are greater than previous closes.
+        Then diveded to 14.
         """
         close = self.close
         loss_list = pd.Series(0.0, index=close.index)
@@ -56,13 +54,13 @@ class RSI:
 
     def rsi(self) -> pd.Series:
         """
-            In this function, it calculates rs by using gain/loss
-            and rsi by using 100-(100/(1+rs)).
-            Returns a pandas series.
+        In this function, it calculates rs by using gain/loss
+        and rsi by using 100-(100/(1+rs)).
+        Returns a pandas series.
         """
         gain = self.gain_calculator()
-        loss =self.loss_calculator()
-        rs = gain/loss
-        rs[rs== float('inf')] = 0
-        rsi = 100 - (100/(1+rs))
+        loss = self.loss_calculator()
+        rs = gain / loss
+        rs[rs == float("inf")] = 0
+        rsi = 100 - (100 / (1 + rs))
         return rsi

@@ -1,20 +1,23 @@
 import pandas as pd
 from hyta.rsi import RSI
 import unittest
+
+
 class TestRSI(unittest.TestCase):
-    '''
-        In this class, testing the following things:
-        Element values are equal and is in the same index.
-        Returns the same length data comparing to original data
-        Returning list is same type as we want(pandas series)
-        '''
-      
+    """
+    In this class, testing the following things:
+    Element values are equal and is in the same index.
+    Returns the same length data comparing to original data
+    Returning list is same type as we want(pandas series)
+    """
+
     @classmethod
     def setUpClass(cls) -> None:
-         cls.df = pd.read_excel("Tests/files/RSI.xlsx")
+        cls.df = pd.read_excel("Tests/files/RSI.xlsx")
+
     @classmethod
     def tearDownClass(cls) -> None:
-         del cls.df
+        del cls.df
 
     def test_gain_calculator(self):
         original_gain = pd.Series(self.df["Avg. Gain"])
@@ -51,6 +54,6 @@ class TestRSI(unittest.TestCase):
         self.assertEqual(len(original_rsi), len(test_rsi))
 
         self.assertIsInstance(test_rsi, pd.Series)
-        
+
     if __name__ == "_main_":
         unittest.main()
