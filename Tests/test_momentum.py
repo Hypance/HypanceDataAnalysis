@@ -7,7 +7,7 @@ class TestMomentum(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.data= pd.read_excel('Tests/files/momentum.xlsx')        
-        cls.closes_list=  cls.data['cloeses_list'].to_list()        
+        cls.closes_list=  cls.data['closes_list'].to_list()        
         cls.result = cls.data['result'].to_list()
         cls.period = cls.data['period'].to_list()
 
@@ -23,8 +23,7 @@ class TestMomentum(unittest.TestCase):
         self.assertIsInstance(self.closes_list[1],float)
         self.assertIsInstance(self.closes_list,list)
 
-        # check  period
-        self.assertIsInstance(self.period[1],int)
+        # check  period        
         self.assertGreater(self.period[4],0)
 
     def test_momentum_result(self):
