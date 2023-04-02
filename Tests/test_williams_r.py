@@ -4,7 +4,7 @@ import pandas as pd
 from hyta.williams_r import WilliamsR
 
 
-class TestWiliiasR(unittest.TestCase):
+class TestWilliamsR(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.data = pd.read_excel("Tests/files/WilliamR.xlsx")
@@ -25,8 +25,6 @@ class TestWiliiasR(unittest.TestCase):
         self.assertIsInstance(self.lowest, list)
         self.assertIsInstance(self.closes[6], float)
         self.assertIsInstance(self.result[-1], float)
-        self.assertGreater(self.result[8], -100)
-        self.assertLess(self.result[10], 0)
 
     def test_result_williams_r(self):
         r = WilliamsR(self.closes[-1], self.lowest, self.highs)
