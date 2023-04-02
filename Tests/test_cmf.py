@@ -7,7 +7,7 @@ import numpy as np
 class TestCmf(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.data = pd.read_excel("files/cs-cmf.xls")
+        cls.data = pd.read_excel("Tests/files/cs-cmf.xls")
 
     @classmethod
     def tearDownClass(cls):
