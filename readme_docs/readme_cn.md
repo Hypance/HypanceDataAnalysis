@@ -84,4 +84,4 @@ pip install hyta
 
 ### 联系我们
 
-- 为了以最有效的方式报告问题、错误或更正，以及提出新的功能，我们强烈建议使用GitHub Issues。
+- 为了以最有效的方式报告问题、错误或更正，以及提出新的功能，我们强烈建议使用[GitHub Issues](https://github.com/Hypance/HypanceDataAnalysis/issues)。

@@ -84,4 +84,4 @@ pip install hyta
 
 ### Kontakt
 
-- Der effizienteste Weg, um Probleme, Fehler oder Korrekturen zu melden und neue Funktionen vorzuschlagen, ist die Nutzung von GitHub Issues.
+- Der effizienteste Weg, um Probleme, Fehler oder Korrekturen zu melden und neue Funktionen vorzuschlagen, ist die Nutzung von [GitHub Issues](https://github.com/Hypance/HypanceDataAnalysis/issues).

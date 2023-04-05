@@ -84,4 +84,4 @@ pip install hyta
 
 ### お問い合わせ先
 
-- 問題、バグ、修正の報告や新機能の提案を最も効率的に行うには、GitHub Issuesの活用を強くお勧めします。
+- 問題、バグ、修正の報告や新機能の提案を最も効率的に行うには、[GitHub Issues](https://github.com/Hypance/HypanceDataAnalysis/issues)の活用を強くお勧めします。

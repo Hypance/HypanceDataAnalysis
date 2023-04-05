@@ -84,4 +84,4 @@ pip install hyta
 
 ### 연락처
 
-- 이슈, 버그 또는 수정 사항을 보고하고 새로운 기능을 제안하는 가장 효율적인 방법을 찾으신다면 GitHub 이슈를 적극 활용할 것을 권장합니다.
+- 이슈, 버그 또는 수정 사항을 보고하고 새로운 기능을 제안하는 가장 효율적인 방법을 찾으신다면 [GitHub Issues](https://github.com/Hypance/HypanceDataAnalysis/issues) 적극 활용할 것을 권장합니다.

@@ -84,4 +84,4 @@ pip install hyta
 
 ### Contato
 
-- Para os meios mais eficientes de relatar problemas, bugs ou correções, assim como propor novas funcionalidades, sugerimos altamente a utilização de GitHub Issues.
+- Para os meios mais eficientes de relatar problemas, bugs ou correções, assim como propor novas funcionalidades, sugerimos altamente a utilização de [GitHub Issues](https://github.com/Hypance/HypanceDataAnalysis/issues).

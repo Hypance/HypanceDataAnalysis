@@ -84,4 +84,4 @@ pip install hyta
 
 ### İletişim
 
-- Sorunları, hataları veya düzeltmeleri bildirmek ve yeni özellikler önermek için en verimli yöntem olarak, GitHub Issues kullanmanızı şiddetle öneriyoruz.
+- Sorunları, hataları veya düzeltmeleri bildirmek ve yeni özellikler önermek için en verimli yöntem olarak, [GitHub Issues](https://github.com/Hypance/HypanceDataAnalysis/issues) kullanmanızı şiddetle öneriyoruz.
