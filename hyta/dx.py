@@ -4,6 +4,46 @@ from hyta.atr import ATR
 
 
 class DX:
+
+    """
+    This class calculate the DX (Directional Movement Index) for default 14-days period.
+    ...
+    Attributes
+    ----------
+    high : pandas.Series
+        The high prices of a financial instrument for each period.
+    low : pandas.Series
+        The low prices of a financial instrument for each period.
+    close : pandas.Series
+        The closing prices of a financial instrument for each period.
+    period : int, 14
+        The number of periods to use for the ADX calculation. Default is 14.
+
+    Methods
+    -------
+    TR(self) -> pd.Series:
+
+    plus_dm(self) -> pd.Series:
+
+    minus_dm(self) -> pd.Series:
+
+    smoothed_plus_dm14(self)-> pd.Series:
+
+    smoothed_minus_dm14(self) -> pd.Series:
+
+    smoothed_tr14(self) -> pd.Series:
+
+    plus_di_14(self) -> pd.Series:
+
+    minus_di_14(self) -> pd.Series:
+
+    di_diff(self) -> pd.Series:
+
+    di_sum(self) -> pd.Series:
+
+    dx(self) -> pd.Series:    
+    """
+
     def __init__(
         self, high: pd.Series, low: pd.Series, close: pd.Series, period: int = 14
     ) -> None:
@@ -51,7 +91,7 @@ class DX:
         self.dx_data["-DM 1"] = pd.DataFrame({"-DM 1": first})
         return self.dx_data["-DM 1"]
 
-    def smoothed_plus_dm14(self):
+    def smoothed_plus_dm14(self) -> pd.Series:
         self.plus_dm()
         first_14_plus_dm = self.dx_data["+DM 1"][: self.period + 1].sum()
         second_14_plus_dm = (
@@ -75,7 +115,7 @@ class DX:
             self.dx_data["+DM 14"] = pd.DataFrame({"+DM 14": new_dx_Data})
         return self.dx_data["+DM 14"]
 
-    def smoothed_minus_dm14(self):
+    def smoothed_minus_dm14(self) -> pd.Series:
         self.minus_dm()
         first_14_minus_dm = self.dx_data["-DM 1"][: self.period + 1].sum()
         second_14_minus_dm = (
@@ -99,7 +139,7 @@ class DX:
             self.dx_data["-DM 14"] = pd.DataFrame({"-DM 14": new_dx_Data})
         return self.dx_data["-DM 14"]
 
-    def smoothed_tr14(self):
+    def smoothed_tr14(self) -> pd.Series:
         self.TR()
         first_14_tr = self.dx_data["TR"][: self.period + 1].sum()
         second_14_tr = (
@@ -123,31 +163,31 @@ class DX:
             self.dx_data["Smoothed TR"] = pd.DataFrame({"Smoothed TR": new_tr_Data})
         return self.dx_data["Smoothed TR"]
 
-    def plus_di_14(self):
+    def plus_di_14(self) -> pd.Series:
         self.smoothed_plus_dm14()
         self.smoothed_tr14()
         plus_di_14 = 100 * (self.dx_data["+DM 14"] / self.dx_data["Smoothed TR"])
         return plus_di_14
 
-    def minus_di_14(self):
+    def minus_di_14(self) -> pd.Series:
         self.smoothed_minus_dm14()
         self.smoothed_tr14()
         minus_di_14 = 100 * (self.dx_data["-DM 14"] / self.dx_data["Smoothed TR"])
         return minus_di_14
 
-    def di_diff(self):
+    def di_diff(self) -> pd.Series:
         self.plus_di_14()
         self.minus_di_14()
         di_difference = abs(self.plus_di_14() - self.minus_di_14())
         return di_difference
 
-    def di_sum(self):
+    def di_sum(self) -> pd.Series:
         self.plus_di_14()
         self.minus_di_14()
         di_sum = self.plus_di_14() + self.minus_di_14()
         return di_sum
 
-    def dx(self):
+    def dx(self) -> pd.Series:
         self.di_diff()
         self.di_sum()
         dx = abs(100 * (self.di_diff() / self.di_sum()))

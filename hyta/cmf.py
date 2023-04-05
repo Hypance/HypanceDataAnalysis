@@ -4,25 +4,28 @@ import pandas as pd
 class CMF:
 
     """
-    This class calculate the cmf for default 20-days period.
+    This class calculate the CMF (Chaikin Money Flow) for default 20-days period.
     ...
     Attributes
     ----------
+    high : pandas.Series
+        The high prices of a financial instrument for each period.
+    low : pandas.Series
+        The low prices of a financial instrument for each period.
     close : pandas.Series
-    low   : pandas.Series
-    high  : pandas.Series
-    volume: pandas.Series
-    period: pandas.Series
+        The closing prices of a financial instrument for each period.
+    period : int, 20
+        The number of periods to use for the ADX calculation. Default is 14.
 
     Methods
     -------
-    money_flow_multiplier(close,low,high):
+    money_flow_multiplier(self):
         Returns the mfm.
 
-    money_flow_volume(mfm, volume):
+    money_flow_volume(self):
         Returns the mfv.
 
-    cmf(money_flow_multiplier,money_flow_volume,data):
+    cmf(self):
         Returns the cmf.
 
     """
