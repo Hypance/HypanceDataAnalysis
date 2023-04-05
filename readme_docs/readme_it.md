@@ -3,7 +3,7 @@
 </div>
 
 -----------------
-# HyTa - Technical Analysis Library
+# HyTa - Biblioteca di Analisi Tecnica
 
 ![](https://img.shields.io/badge/python-3.8-blue.svg) ![](https://img.shields.io/badge/python-3.9-blue.svg) ![](https://img.shields.io/badge/python-3.10-blue.svg) ![](https://img.shields.io/badge/python-3.11-blue.svg) ![](https://img.shields.io/badge/pypy-3-blue.svg) ![unit tests](https://github.com/Hypance/HypanceDataAnalysis/blob/read.me/readme_docs/unittest.svg) 
 
@@ -35,15 +35,15 @@
 
 -----------------
 
-"Hyta" is a novel Python library that provides financial indicators for technical analysis, with a noteworthy emphasis on incremental computation. The library's incremental computation feature makes it particularly suitable for real-time applications or any other application that involves iterative input.
+"Hyta" è una nuova libreria Python che fornisce indicatori finanziari per l'analisi tecnica, con un'importante enfasi sul calcolo incrementale. La funzionalità di calcolo incrementale della libreria la rende particolarmente adatta per applicazioni in tempo reale o qualsiasi altra applicazione che comporti un input iterativo.
 
-As a relatively new project, "hyta" is highly receptive to user feedback and suggestions for improving its API to meet users' unique needs.
+Come progetto relativamente nuovo, "HyTa" è altamente receptivo ai feedback degli utenti e alle proposte per migliorare la sua API per soddisfare le esigenze uniche degli utenti.
 
 ---
 
-### List of indicators
+### Elenco degli indicatori
 
-The current version of "hyta" includes a comprehensive set of indicators. However, if your preferred indicator is not included, you can create a ticket through GitHub Issues, and there is a high likelihood that it will be incorporated into a future version of the library.
+La versione attuale di "HyTa" include un insieme completo di indicatori. Tuttavia, se il tuo indicatore preferito non è incluso, puoi creare un ticket tramite GitHub Issues, e c'è una grande probabilità che verrà incorporato in una futura versione della libreria.
 
 - [Average Directional Index (ADX)](https://github.com/Hypance/HypanceDataAnalysis/blob/DEV004/hyta/adx.py)
 - [Aroon](https://github.com/Hypance/HypanceDataAnalysis/blob/DEV004/hyta/aroon.py)
@@ -77,11 +77,11 @@ The current version of "hyta" includes a comprehensive set of indicators. Howeve
 
 
 
-### Installation
+### Installazione
 ```bash
 pip install hyta
 ```
 
-### Contact
+### Contatti
 
-- For the most efficient means of reporting issues, bugs, or corrections, as well as proposing new features, we highly suggest utilizing [GitHub Issues](https://github.com/Hypance/HypanceDataAnalysis/issues).
+- Per segnalare problemi, bug o correzioni e proporre nuove funzionalità in modo efficiente, suggeriamo vivamente di utilizzare [GitHub Issues](https://github.com/Hypance/HypanceDataAnalysis/issues).
