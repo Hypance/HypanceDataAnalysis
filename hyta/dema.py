@@ -18,4 +18,4 @@ class DEMA:
     """
 
     def dema(self) -> np.array:
-        return (2 * EMA(self.close,self.period).calc_ema() ) - (EMA(EMA(self.close,self.period).calc_ema(),self.period).calc_ema())
+        return (2 * self.ema() ) - (EMA(self.ema(),self.period).calc_ema())
