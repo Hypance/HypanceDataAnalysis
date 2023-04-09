@@ -3,7 +3,7 @@ import numpy as np
 
 class DEMA:
 
-    def __init__(self, period=9):
+    def __init__(self, close, period=9):
         self.period = period - 1
         self.close = close
 
