@@ -1,4 +1,4 @@
-from hyta.weighted_moving_average import WeightedMovingAverage
+from hyta.wma import WeightedMovingAverage
 import math
 
 

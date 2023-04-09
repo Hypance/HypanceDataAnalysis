@@ -1,7 +1,6 @@
 
 import pandas as pd
 
-
 class StochasticOscillator:
     def __init__(self, high, low, close, periods: int = 5):
         self.high = high
@@ -24,6 +23,7 @@ class StochasticOscillator:
         return self.low_roll
 
     # Fast stochastic indicator
+
     def fast_stochastic(self):
         num = self.df["Close"] - self.low_roll
         denom = self.high_roll - self.low_roll
