@@ -14,26 +14,13 @@ class TestRateOfChange(unittest.TestCase):
     def tearDownClass(cls) -> None:
         del cls.df
 
-    """
-    In this module, testing the following things:
-    Element values are equal and is in the same index.
-    Returns the same length data comparing to original data
-    Returning list is same type as we want(np.ndarray)
-    [12:] is necessary to skip the empty values of ROC in Sample Excel.
-    """
-
     def test_Roc(self):
-
+        # [12:] is necessary to skip the empty values of ROC in Sample Excel.
         original = np.array(self.df["ROC"][12:])
-
         test = ROC(self.close).roc()
-
         self.assertIsNotNone(test)
-
         self.assertAlmostEqual(original[-1], test.iloc[-1])
-
         self.assertEqual(len(original), len(test))
-
         self.assertIsInstance(test, pd.Series)
 
 
