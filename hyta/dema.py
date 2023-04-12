@@ -1,21 +1,28 @@
 from hyta.ema import EMA
-import numpy as np
+import pandas as pd
+
 
 class DEMA:
+    """
+    DEMA is a technical indicator that calculates the average
+    price of an asset, giving more weight to recent prices.
+    It's more responsive to price changes than a simple moving average,
+    and is used by traders to identify buying and selling opportunities.
+    """
 
     def __init__(self, close, period=9):
-        self.period = period - 1
-        self.close = close
+        self.period = period
+        self.df = pd.DataFrame(data={"Close": close})
+        self.close = self.df["Close"]
 
-    """
-    Calculating first EMA for DEMA
-    """
-    def ema(self) -> np.array:
-        return EMA(self.close ,self.period).calc_ema()
+    def ema(self) -> pd.Series:
+        """
+        Calculating first EMA for DEMA
+        """
+        return EMA(self.close, self.period).calc_ema()
 
-    """
-    Calculating dema by using function --> 2*Ema - Ema of Ema 
-    """
-
-    def dema(self) -> np.array:
-        return (2 * self.ema() ) - (EMA(self.ema(),self.period).calc_ema())
+    def dema(self) -> pd.Series:
+        """
+        Calculating dema by using function --> 2*Ema - Ema of Ema
+        """
+        return (2 * self.ema()) - (EMA(self.ema(), self.period).calc_ema())
