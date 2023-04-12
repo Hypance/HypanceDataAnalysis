@@ -23,6 +23,6 @@ class DEMA:
 
     def dema(self) -> pd.Series:
         """
-        Calculating dema by using function --> 2*Ema - Ema of Ema
+        Calculating DEMA by using function --> 2*Ema - Ema of Ema
         """
         return (2 * self.ema()) - (EMA(self.ema(), self.period).calc_ema())
