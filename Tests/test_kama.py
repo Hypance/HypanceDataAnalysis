@@ -7,7 +7,7 @@ from hyta.kama import KAMA
 class TestKAMA(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.df = pd.read_excel("files/kama.xlsx")
+        cls.df = pd.read_excel("Tests/files/kama.xlsx")
 
     def setUp(self):
         self.ind = KAMA(self.df["Close"], 10, 2, 30)

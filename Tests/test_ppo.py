@@ -61,5 +61,6 @@ class TestPPO(unittest.TestCase):
         )
         self.assertIsInstance(self.result_ppo, pd.Series)
 
+
 if __name__ == "__main__":
     unittest.main()

@@ -7,7 +7,7 @@ from hyta.ema import EMA
 class TestEma(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
-        cls.df = pd.read_excel("files/ema.xlsx")
+        cls.df = pd.read_excel("Tests/files/ema.xlsx")
 
     @classmethod
     def tearDownClass(cls) -> None:

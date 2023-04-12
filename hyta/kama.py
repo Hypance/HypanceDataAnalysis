@@ -73,7 +73,7 @@ class KAMA:
 
     def calc_kama(self):
         self.smoothing_constant()
-        self.df["kama"] = pd.Series()
+        self.df["kama"] = pd.Series(dtype="float64")
 
         for i in range(1, len(self.df["Close"])):
             self.df["kama"][: self.period - 1] = np.nan
