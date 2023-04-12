@@ -4,7 +4,7 @@ import numpy as np
 
 class MFI:
     """
-    This class calculate the money flow index for default 14-days period .
+    This class calculate the MFI (Money Flow Index) for default 14-days period .
     ...
     Attributes
     ----------
@@ -12,6 +12,7 @@ class MFI:
     low : pd.Series
     high : pd.Series
     volume: pd.Series
+    
     Methods
     -------
     typical_price(high,low,close):

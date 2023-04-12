@@ -2,7 +2,25 @@ import pandas as pd
 
 
 class PPO:
+    """
+    This class calculate the PPO (Percentage Price Oscillator).
+    ...
+    Attributes
+    ----------
+    close : pandas.Series
+        The closing prices of a financial instrument for each period.
+
+    Methods
+    -------
+    ema_12(self) -> pd.Series:
+
+    ema_26(self) -> pd.Series:
+
+    ppo(self) -> pd.Series:
+
+    """
     def __init__(self, close):
+
         self.close = close
         self.ppo_data = pd.DataFrame({"Close": self.close})
 
