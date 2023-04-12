@@ -1,0 +1,31 @@
+[build-system]
+requires = [
+    "setuptools",
+    "wheel",
+    ]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "HyTA"
+version = "0.1.0"
+authors = [
+    {name = "Toygar Aksoy", email = "toygar.aksoy@gmail.com"},
+    {name = "Ugur Aydin", email = "uguraydin7541@gmail.com"},
+    {name = "Bahar Karakaya", email = "baharkrky00@gmail.com"},
+    {name = "Esra Ovalı", email = "esra.ovali@gmail.com"},
+    {name = "Hasan Huseyin Boyaci", email = "boyacihasanhuseyin@gmail.com"},
+    {name = "Esra Melike Cakir", email = "esramelike10@gmail.com"}]
+description = "Indicators for Hypance Project"
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    ]
+dependencies = [
+    "numpy==1.23.3",
+    "pandas==1.5.0",
+    ]
