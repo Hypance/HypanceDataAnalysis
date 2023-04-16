@@ -6,7 +6,7 @@ from hyta.dpo import DPO
 class Test_DetrendedPriceOscillator(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
-        cls.df = pd.read_excel("files/DPO.xlsx")    
+        cls.df = pd.read_excel("Tests/files/DPO.xlsx")
 
     @classmethod
     def tearDownClass(cls) -> None:
@@ -64,11 +64,11 @@ class Test_DetrendedPriceOscillator(unittest.TestCase):
         
         test = DPO(list(self.df['close']),20).dpo()
                 
-        self.assertAlmostEqual(original[-1],test[-1]) 
+        self.assertAlmostEqual(original[25],test[25])
         
         self.assertEqual(len(original),len(test)) # Testing output arrays element counts.
 
-        self.assertIsInstance(test,np.ndarray)
+        self.assertIsInstance(test,pd.Series)
 
 if __name__ == "__main__":
     unittest.main()

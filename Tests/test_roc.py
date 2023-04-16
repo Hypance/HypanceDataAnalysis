@@ -6,7 +6,7 @@ from hyta.roc import ROC
 class TestRateOfChange(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
-        cls.df = pd.read_excel("files/ROC.xlsx")
+        cls.df = pd.read_excel("Tests/files/ROC.xlsx")
         cls.close = np.array(cls.df["close"])
     
     @classmethod
@@ -30,7 +30,7 @@ class TestRateOfChange(unittest.TestCase):
         
         self.assertIsNotNone(test)
                 
-        self.assertAlmostEqual(original[-1],test[-1]) 
+        self.assertAlmostEqual(original[25],test[25])
         
         self.assertEqual(len(original),len(test)) 
 

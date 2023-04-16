@@ -1,4 +1,5 @@
 import numpy as np
+import pandas as pd
 class DPO:
     #required input: dataset(array),period(int)
     def __init__(self, dataset:list, period:int=4) -> None: 
@@ -22,4 +23,4 @@ class DPO:
     #Starting function, it returns a list.
     def dpo(self): 
         dpoFinalize = np.subtract(self.closes(),self.moving_average())
-        return list(dpoFinalize)
+        return pd.Series(dpoFinalize)

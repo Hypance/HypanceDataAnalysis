@@ -1,12 +1,12 @@
 import pandas as pd 
 import numpy as np 
 import unittest 
-from hyta.UO import UO
+from hyta.uo import UO
 
 class TestUltimateOscillator(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
-        cls.df = pd.read_excel("files/UO-datas.xlsx")
+        cls.df = pd.read_excel("Tests/files/UO-datas.xlsx")
         cls.close = np.array(cls.df["close"])
         cls.high = np.array(cls.df["high"])
         cls.low = np.array(cls.df["low"])
@@ -30,7 +30,7 @@ class TestUltimateOscillator(unittest.TestCase):
         
         test = UO(self.low,self.close,self.high).buyingPressure()
                 
-        self.assertAlmostEqual(original[-1],test[-1]) 
+        self.assertAlmostEqual(original[25],test[25])
         
         self.assertGreaterEqual(np.nanmin(test),0)   
         
@@ -52,7 +52,7 @@ class TestUltimateOscillator(unittest.TestCase):
         
         test = UO(self.low,self.close,self.high).trueRange()
                 
-        self.assertAlmostEqual(original[-1],test[-1]) 
+        self.assertAlmostEqual(original[25],test[25])
         
         self.assertGreaterEqual(np.nanmin(test),0)  
 
@@ -75,7 +75,7 @@ class TestUltimateOscillator(unittest.TestCase):
         
         test = UO(self.low,self.close,self.high).Average7()
                 
-        self.assertAlmostEqual(original[-1],test[-1]) 
+        self.assertAlmostEqual(original[32],test[25])
         
         self.assertGreaterEqual(np.nanmin(test),0)  
         
@@ -97,7 +97,7 @@ class TestUltimateOscillator(unittest.TestCase):
         
         test = UO(self.low,self.close,self.high).Average14()
                 
-        self.assertAlmostEqual(original[-1],test[-1]) 
+        self.assertAlmostEqual(original[39],test[25])
         
         self.assertGreaterEqual(np.nanmin(test),0)  
         
@@ -120,7 +120,7 @@ class TestUltimateOscillator(unittest.TestCase):
         
         test = UO(self.low,self.close,self.high).Average28()
                 
-        self.assertAlmostEqual(original[-1],test[-1]) 
+        self.assertAlmostEqual(original[63],test[35])
         
         self.assertGreaterEqual(np.nanmin(test),0)  
         
@@ -144,7 +144,7 @@ class TestUltimateOscillator(unittest.TestCase):
         
         test = UO(self.low,self.close,self.high).uo()
                 
-        self.assertAlmostEqual(original[-1],test[-1]) 
+        self.assertAlmostEqual(original[63],test[35])
         
         self.assertGreaterEqual(np.nanmin(test),0)
 

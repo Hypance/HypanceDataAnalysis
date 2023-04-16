@@ -6,7 +6,7 @@ from hyta.tma import TMA
 class TestTriangularMovingAverage(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
-        cls.df = pd.read_excel("files/TMA.xlsx")
+        cls.df = pd.read_excel("Tests/files/TMA.xlsx")
 
     @classmethod
     def tearDownClass(cls) -> None:
