@@ -5,7 +5,7 @@ name: Test
 
 on:
   push:
-    branches: [ "main" , "DEV*"]
+    branches: [ "main" , "DEV*" ]
   pull_request:
     branches: [ "main" , "DEV*" ]
 
