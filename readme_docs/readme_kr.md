@@ -5,7 +5,7 @@
 -----------------
 # HyTa - 기술 분석 라이브러리
 
-![](https://img.shields.io/badge/python-3.8-blue.svg) ![](https://img.shields.io/badge/python-3.9-blue.svg) ![](https://img.shields.io/badge/python-3.10-blue.svg) ![](https://img.shields.io/badge/python-3.11-blue.svg) ![](https://img.shields.io/badge/pypy-3-blue.svg) ![unit tests](https://github.com/Hypance/HypanceDataAnalysis/blob/read.me/readme_docs/unittest.svg) 
+ ![](https://img.shields.io/badge/python-3.8-blue.svg) ![](https://img.shields.io/badge/python-3.9-blue.svg) ![](https://img.shields.io/badge/python-3.10-blue.svg) ![](https://img.shields.io/badge/python-3.11-blue.svg) ![unit tests](https://github.com/Hypance/HypanceDataAnalysis/blob/read.me/readme_docs/unittest.svg)
 
 
 
